@@ -1,0 +1,34 @@
+<!--pages/Profile/Profile.wxml-->
+<view class="container">
+
+    <!-- 用户信息 -->
+    <view class="profile">
+        <image class="avatar" src="/images/student.png"/>
+        <text class="username">{{ username }}</text>
+        <text class="userid">ID: {{ userID }}</text>
+    </view>
+
+    <!-- 金币信息 -->
+    <view class="balance">
+        <text class="coin-amount">积分：{{ coinamount }}</text>
+        <button class="recharge-btn" style="width: 60px">充值</button>
+    </view>
+
+    <!-- 功能列表 -->
+    <view class="function-list">
+        <view class="function-item">
+            <text class="item-text">联系客服</text>
+        </view>
+        <!-- 复制以上列表项进行功能扩展 -->
+    </view>
+    <view class="footer-nav">
+            <view class="nav-item" bindtap="navigateToChat">
+                <image class="nav-icon" src="/images/chat.png" alt="no icon here"/>
+                <text class="nav-text">对话</text>
+            </view>
+            <view class="nav-item" bindtap="navigateToProfile">
+                <image class="nav-icon" src="/images/my.png"/>
+                <text class="nav-text">我的</text>
+            </view>
+        </view>
+</view>

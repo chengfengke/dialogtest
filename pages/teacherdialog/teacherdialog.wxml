@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="top-bar">
+    <image class="return-icon" src="/images/arrow-left-bold.png" bindtap="goBack" ></image>
+    <image class="app-avatar" src="/images/avatar-XiaoXi.png"></image>
+    <view class="app-info">
+      <view class= "app-name">{{ appName }}</view>
+      <view class = " app-description"> {{appDescription}}</view>
+    </view>
+  </view>
+
+
+  <scroll-view class="messages" scroll-y="true" scroll-top="{{scrollTop}}">
+  <block wx:for="{{messages}}" wx:key="index">
+    <view class="message-container {{item.type}}">
+      <image class="avatar user-avatar" wx:if="{{item.type === 'user'}}" src="{{userAvatar}}" />
+      <view class="message {{item.type}}" style="width:{{item.width}}px;">
+        {{item.content}}
+      </view> 
+      <image class="avatar bot-avatar" wx:if="{{item.type === 'assistant'}}" src="{{systemAvatar}}" />
+    </view>
+  </block>
+</scroll-view>
+
+  <view class="input-container">
+    <input class="input" placeholder="请向我提问" bindinput="onInput" value="{{inputText}}" />
+    <button class="send-btn {{isInputActive ? 'active' : ''}}" bindtap="sendMessage">发送</button>
+  </view>
+</view>

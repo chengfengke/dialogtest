@@ -1,0 +1,41 @@
+<view class="page-container">
+  <!-- 顶部导航栏 -->
+  <view class="header">
+    <view class="nav-section">
+      <view class="nav-icon-holder" bindtap="toggleNavMenu">
+        <!-- 假设这是一个用于打开导航栏的图标 -->
+        <text class="nav-icon">≡</text> 
+      </view>
+      <text class="header-title">想帮助你的积极心理专家</text>
+    </view>
+  </view>
+    <view class="container">
+      <!-- 学生按钮 -->
+      <van-button round block custom-class="button student" bind:tap="navigateToStudent">
+        <van-image fit="cover" src="/images/student.png" custom-class="avatar"/>
+        <text>我是学生，我需要治疗</text>
+      </van-button>
+
+      <!-- 老师按钮 -->
+      <van-button round block custom-class="button teacher" bind:tap="navigateToTeacher">
+        <van-image fit="cover" src="/images/teacher.png" custom-class="avatar"/>
+        <text>我是老师，我需要训练</text>
+      </van-button>
+        <view class="demo-container">
+          <van-cell-group>
+            <van-cell title="功能描述一" icon="location-o" />
+            <van-cell title="功能描述二" icon="like-o" />
+            <van-cell title="功能描述三" icon="star-o" />
+            <!-- 更多功能描述... -->
+          </van-cell-group>
+</view>
+<view class="main">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</view>
+      <!-- 底部导航条 -->
+      <van-tabbar active="{{ activeTab }}">
+        <van-tabbar-item icon="chat-o" name="chat" bindtap="navigateToChat">聊天</van-tabbar-item>
+        <van-tabbar-item icon="manager-o" name="profile" bindtap="navigateToProfile">我的</van-tabbar-item>
+      </van-tabbar>
+  </view>
+</view>

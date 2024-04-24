@@ -1,0 +1,159 @@
+/* 全局容器样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* 顶部栏样式 */
+.top-bar {
+  margin-top: 30px;
+  display: flex; /* 使用flex布局 */
+  flex-direction: row;
+  align-items:center;
+  width: 100%; /* 根据需要，您可以设置顶部栏的宽度 */
+  padding: 0 10px;
+  box-sizing: border-box; /* 使内边距不影响总宽度 */
+}
+
+/* 返回图标样式 */
+.return-icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10px;
+}
+
+/* 消息容器样式 */
+.message-container {
+  display: flex;
+  align-items: flex-start;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+/* 用户和机器人头像样式 */
+.bot-avatar,
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 20%;
+}
+
+/* 用户消息容器样式 */
+.message-container.user {
+  display: inline-flex;
+  justify-content: flex-start;
+  margin-right: 60px;
+}
+
+/* 机器人消息容器样式 */
+.message-container.assistant {
+  justify-content: flex-end;
+  margin-left: 60px;
+}
+
+/* 消息样式 */
+.message {
+  max-width: 78%;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+/* 用户消息样式 */
+.user {
+  align-self: flex-start;
+  background-color: #5583E3;
+  color: #ffffff;
+  text-align: right;
+  font-size: 14px;
+}
+
+/* 机器人消息样式 */
+.assistant {
+  align-self: flex-end;
+  background-color: #FFECEC;
+  color: #000000;
+  text-align: left;
+  font-size: 14px;
+}
+
+/* 输入容器样式 */
+.input-container {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border: thin solid #BBBBBB;
+  border-radius: 15px;
+  margin-top: auto; /* 自动定位到底部 */
+}
+
+/* 输入框样式 */
+.input {
+  flex-grow: 1; /* 输入框填充剩余空间 */
+  margin-right: 5px;
+  padding: 5px;
+  border: none;
+  background-color: #ffffff;
+  font-size: 14px;
+  border-radius: 15px;
+}
+
+
+/* 发送按钮激活状态样式 */
+.send-btn.active {
+  background-color: blue;
+}
+
+/* 应用头像样式 */
+.app-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 10px;
+}
+
+/* 应用信息样式 */
+.app-info {
+  display: flex;
+  align-items: center;
+  transform: translateX(-10%);
+  flex-direction: column;
+  flex-grow: 1; /* 让app-info填充剩余空间 */
+  margin-right: 10px; 
+}
+
+/* 应用名称样式 */
+.app-name {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5rpx;
+}
+
+/* 应用描述样式 */
+.app-description {
+  font-size: 10px;
+  color: #999;
+}
+
+/* 消息视图样式 */
+.messages {
+  flex: 1; /* 使消息视图填充可用空间 */
+  height: calc(100vh - 150px); /* 视口高度减去顶部栏和输入框的高度 */
+  overflow-y: auto; /* 允许在Y轴上滚动 */
+  padding: 10px;
+  padding-top: 5px;
+}
+
+.send-btn {
+  flex: 1; /* 发送按钮的占比 */
+  width: 50px; /* 按钮宽度 */
+  background-color: gray;
+  color: #ffffff;
+  border: 5px;
+  border-radius: 15px;
+  padding: 5px;
+  text-align: center;
+}

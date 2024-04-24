@@ -1,0 +1,11 @@
+/* pages/echarts/echarts.wxss */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.ec-canvas {
+  width: 100%;
+  height: 300px; /* 或更根据你的页面设计调整 */
+}
