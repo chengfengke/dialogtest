@@ -6,13 +6,13 @@
   </view>
   
   <view class="button-container">
-    <button class="login-button" bind:click="onLogin"><image src="/images/Wechat.jpg" style="width:30px;height:30px;margin-right: 30%;"/>微信登录</button>
+    <button class="login-button" bind:tap="onLogin"><image src="/images/Wechat.jpg" style="width:30px;height:30px;margin-right: 30%;"/>微信登录</button>
   </view>
   <view class="button-container2">
     <button class="phone-login"><van-icon class="phone-icon" size="25px" name="phone" />
     <text class="phone-text">手机号码登录</text></button>
   </view>
   <view class="footer">
-    <van-checkbox icon-size="15px" checked-color="#07c160">已阅读并同意<span class="highlight">《服务协议》和《隐私权政策》</span></van-checkbox>
+    <van-checkbox icon-size="15px" checked-color="black" value="{{checked}}" bind:change="onChange" >已阅读并同意<span class="highlight">《服务协议》</span>和<span class="highlight">《隐私权政策》</span></van-checkbox>
   </view>
 </view>
