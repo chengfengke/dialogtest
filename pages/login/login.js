@@ -30,7 +30,7 @@ Page({
       }
     });
     console.log("111")
-    wx.redirectTo({
+    wx.switchTab({
       url: '/pages/index/index',
     })
   }

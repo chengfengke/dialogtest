@@ -3,9 +3,11 @@
   "tabBar": {
     "custom":true,
     "list": [{
-      "pagePath": "pages/index/index"
+      "pagePath": "pages/index/index",
+      "text":"聊天"
     },{
-      "pagePath": "pages/profile/profile"
+      "pagePath": "pages/profile/profile",
+      "text":"我的"
     }]
   }
 }
