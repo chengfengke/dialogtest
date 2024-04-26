@@ -23,14 +23,20 @@ Page({
     });
   },
 
-  navigateToChat: function() {
+  navigateToChat() {
     wx.navigateTo({
       url: '/pages/index/index',
+      success: () => {
+        getApp().globalData.activeTab = 'chat';
+      }
     });
   },
-  navigateToProfile: function() {
+  navigateToProfile() {
     wx.navigateTo({
       url: '/pages/profile/profile',
+      success: () => {
+        getApp().globalData.activeTab = 'profile';
+      }
     });
   },
   bindViewTap() {

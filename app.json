@@ -1,5 +1,4 @@
 {
-
   "pages": [
     "pages/login/login",
     "pages/index/index",
@@ -27,6 +26,6 @@
     "van-icon": "@vant/weapp/icon/index",
     "van-cell": "@vant/weapp/cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",
-    "van-checkbox":"@vant/weapp/checkbox"
+    "van-checkbox": "@vant/weapp/checkbox"
   }
 }
