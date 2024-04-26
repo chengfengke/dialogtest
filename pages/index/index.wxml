@@ -29,9 +29,6 @@
             <!-- 更多功能描述... -->
           </van-cell-group>
 </view>
-<view class="main">
-  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
-</view>
       <!-- 底部导航条 -->
       <van-tabbar active="{{ activeTab }}">
         <van-tabbar-item icon="chat-o" name="chat" bindtap="navigateToChat">聊天</van-tabbar-item>

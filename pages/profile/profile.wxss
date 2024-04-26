@@ -70,9 +70,6 @@
   border-bottom: 1px solid #eee;
 } */
 
-.coin-amount {
-}
-
 .recharge-btn {
   color: #fff;
   background-color: #1e90ff;
@@ -108,87 +105,26 @@
   margin-right: 180rpx; 
 } 
 
-
-/*
-.contact-icon {
-  width: 60rpx; 
-  height: 60rpx; 
-  margin-right: 25%;
-  margin-left: 2%;
- }
-.contact-btn{
-  border-radius: 10rpx;
-  width: 85%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  color: black;
-  background-color: white;
-  border-bottom: 15rpx;
+/* Vant Icon 样式调整，如果需要的话 */
+.van-icon {
+  font-size: 20px; /* 图标大小 */
+  color: #1989fa; /* 图标颜色 */
 }
 
-.edit-icon {
-  width: 60rpx; 
-  height: 60rpx; 
-  margin-right: 25%;
-  margin-left: 2%;
- }
-.edit-btn{
-  margin-top:15rpx;
-  border-radius: 10rpx;
-  width: 85%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  color: black;
-  background-color: white;
-  margin-bottom: 5rpx;
+van-tabbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.1); /* 顶部阴影 */
 }
 
-.info-icon {
-  width: 60rpx; 
-  height: 60rpx; 
-  margin-right: 25%;
-  margin-left: 2%;
- }
-.info-btn{
-  margin-top:15rpx;
-  border-radius: 10rpx;
-  width: 85%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  color: black;
-  background-color: white;
-  margin-bottom: 15rpx;
+/* 底部导航项样式 */
+van-tabbar-item {
+  color: #7c7c7c; /* 默认颜色 */
 }
 
-.logout-icon {
-  width: 60rpx; 
-  height: 60rpx; 
-  margin-right: 25%;
-  margin-left: 2%;
- }
-.logout-btn{
-  border-radius: 10rpx;
-  width: 85%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  color: black;
-  background-color: white;
+van-tabbar-item.van-tabbar-item--active {
+  color: #09BB07; /* 激活颜色 */
 }
 
-/* .balance {
-  display: flex;
-  align-items: center;
-} 
 
-.item-text {
-  margin-left: 10px;
-  flex-grow: 1;
-} */

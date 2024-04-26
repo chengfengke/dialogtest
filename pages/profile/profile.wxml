@@ -30,15 +30,8 @@
       </button>
     </view>
 
-
-    <view class="footer-nav">
-            <view class="nav-item" bindtap="navigateToChat">
-                <image class="nav-icon" src="/images/chat.png" alt="no icon here"/>
-                <text class="nav-text">对话</text>
-            </view>
-            <view class="nav-item" bindtap="navigateToProfile">
-                <image class="nav-icon" src="/images/my.png"/>
-                <text class="nav-text">我的</text>
-            </view>
-        </view>
+    <van-tabbar active="{{ activeTab }}">
+        <van-tabbar-item icon="chat-o" name="chat" bindtap="navigateToChat">聊天</van-tabbar-item>
+        <van-tabbar-item icon="manager-o" name="profile" bindtap="navigateToProfile">我的</van-tabbar-item>
+      </van-tabbar>
 </view>
