@@ -29,7 +29,8 @@ Page({
         }
       }
     });
-    wx.navigateTo({
+    console.log("111")
+    wx.redirectTo({
       url: '/pages/index/index',
     })
   }

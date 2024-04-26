@@ -1,12 +1,13 @@
 {
   "pages": [
-    "pages/login/login",
     "pages/index/index",
+    "pages/login/login",
     "pages/studentdialog/studentdialog",
     "pages/teacherdialog/teacherdialog",
     "pages/logs/logs",
     "pages/profile/profile",
-    "pages/line/line"
+    "pages/line/line",
+    "custom-tab-bar/index"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -27,5 +28,15 @@
     "van-cell": "@vant/weapp/cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",
     "van-checkbox": "@vant/weapp/checkbox"
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "聊天"
+    },{
+      "pagePath": "pages/profile/profile",
+      "text": "我的"
+    }]
   }
 }

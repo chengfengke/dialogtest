@@ -1,5 +1,9 @@
 // app.js
 App({
+  globalData: {
+    activeTab: 'chat',
+    userInfo: null
+  },
   onLaunch() {
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
@@ -13,7 +17,4 @@ App({
       }
     })
   },
-  globalData: {
-    userInfo: null
-  }
 })
