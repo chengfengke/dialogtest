@@ -11,16 +11,26 @@
     <!-- 金币信息 -->
     <view class="balance">
         <text class="coin-amount">积分：{{ coinamount }}</text>
-        <button class="recharge-btn" style="width: 60px">充值</button>
+        <!-- <button class="recharge-btn" style="width: 60px">充值</button> -->
     </view>
 
     <!-- 功能列表 -->
     <view class="function-list">
-        <view class="function-item">
-            <text class="item-text">联系客服</text>
-        </view>
-        <!-- 复制以上列表项进行功能扩展 -->
+      <button class="function-item" data-type="contact" bindtap="onFunctionTap"> 
+        <image class="function-icon" src="/images/erji.png" />联系客服
+      </button>
+      <button class="function-item" data-type="edit" bindtap="onFunctionTap"> 
+        <image class="function-icon" src="/images/editprofile.png" />编辑资料
+      </button>
+      <button class="function-item" data-type="info" bindtap="onFunctionTap">
+        <image class="function-icon" src="/images/info.png" />关于我们
+      </button>
+      <button class="function-item" data-type="logout" bindtap="onFunctionTap"> 
+        <image class="function-icon" src="/images/exit-full.png" />注销账号
+      </button>
     </view>
+
+
     <view class="footer-nav">
             <view class="nav-item" bindtap="navigateToChat">
                 <image class="nav-icon" src="/images/chat.png" alt="no icon here"/>
