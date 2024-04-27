@@ -11,6 +11,18 @@ Page({
         desc: '用于完善会员资料', // 这里填写一些说明，告知用户为什么需要这些数据
         success: (res) => {
           console.log('用户信息', res.userInfo);
+          db.collection('users').add({
+            data: {
+              openid: openid,
+              nickName: nickName
+            },
+            success: function(res) {
+              console.log(res);
+            },
+            fail: function(err) {
+              console.error(err);
+            }
+          });
           // 你可以在这里将用户信息发送到后台服务器
         },
         fail: () => {
