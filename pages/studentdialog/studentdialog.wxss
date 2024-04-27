@@ -1,19 +1,36 @@
-.app-avatar {
-  width: 60rpx;
-  height: 60rpx;
-  margin-top: 20px;
-  margin-left: 30px;
+/* 全局容器样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
 }
 
+
+/* 顶部栏样式 */
+.top-bar {
+  margin-top: 50rpx;
+  display: flex; /* 使用flex布局 */
+  flex-direction: row;
+  align-items:center;
+  width: 100%; /* 根据需要，您可以设置顶部栏的宽度 */
+  padding: 0 10rpx;
+  box-sizing: border-box; /* 使内边距不影响总宽度 */
+}
+
+/* 返回图标样式 */
 .return-icon {
   width: 30rpx;
   height: 30rpx;
-  padding: 7px;
-  margin-top: 26px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.979);
+  margin-right: 10px;
 }
 
+/* 应用头像样式 */
+.app-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 10px;
+}
 /* 应用信息样式 */
 .app-info {
   display: flex;
@@ -24,22 +41,19 @@
   margin-right: 10px; 
 }
 
-.header {
-  display: flex;
-  align-items: center; /* 确保子项垂直居中 */
-  justify-content: start; /* 子项靠左对齐 */
-  background-color: #00a2ff; /* 蓝色背景 */
-  padding: 10px 15px; /* 上下各10px，左右各15px的内边距 */
-  height: 70px; /* 导航栏高度 */
-  position: relative; /* 相对定位 */
-  border-radius: 10px;
+/* 应用名称样式 */
+.app-name {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5rpx;
 }
 
-.nav-icon {
-  position: absolute; /* 绝对定位 */
-  top: 40%; /* 垂直居中 */
-  font-size: 30px;
+/* 应用描述样式 */
+.app-description {
+  font-size: 10px;
+  color: #999;
 }
+
 /* 导航图标样式 */
 .icon-image {
   width: 30px;
@@ -59,11 +73,7 @@
   text-align: center; /* 文字居中对齐 */
 }
 
-.container {
-  background: linear-gradient(to bottom, #bcf5ff, rgb(238, 238, 238));
-  height: 90vh; /* 保持全屏高度 */
-  padding: 10px;
-}
+
 
 /* 消息容器样式 */
 .message-container {
@@ -106,23 +116,33 @@
   align-items: center; /* 垂直居中 */
   padding-left: 15px;
   padding-right: 15px;
-  width: 40vh;
+  width: 45vh;
   background-color: #FFF; /* 或者根据您的UI主题颜色 */
   border-top: none; /* 取消顶部边界线 */
   border-radius: 30px; /* 调整这个值来改变圆角的弯曲程度 */
 }
 .input-inner-container {
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 0;
 }
-
+.new-topic{
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 25rpx;
+  margin-right: 5rpx;
+}
 .van-field {
   margin-left: 1px;
   flex-grow: 1; /* 输入框填充剩余空间 */
   margin-right: 1px; /* 保持按钮和输入框的间距 */
+
 }
 
 .van-button {
   min-width: 20px; /* 保证按钮宽度足够 */
+  margin-right: 20rpx;
 }
 .messages {
   flex: 1; /* 消息视图填充可用空间 */

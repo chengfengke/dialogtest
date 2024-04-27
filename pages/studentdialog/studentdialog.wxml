@@ -1,11 +1,14 @@
-<view class="header">
-    <view class="nav-section">
-      <image class="return-icon" src="/images/arrow-left-bold.png" bindtap="goBack" ></image>
-    </view>
-      <image class="app-avatar" src="/images/avatar-XiaoXi.png"></image>
-      <text class="header-title">{{ appName }}--{{appDescription}}</text>
-  </view>
 <view class="container">
+
+  <view class="top-bar">
+    <image class="return-icon" src="/images/arrow-left-bold.png" bindtap="goBack" ></image>
+    <image class="app-avatar" src="/images/avatar-XiaoXi.png"></image>
+    <view class="app-info">
+      <view class= "app-name">{{ appName }}</view>
+      <view class = " app-description"> {{appDescription}}</view>
+    </view>
+  </view>
+
   <scroll-view class="messages" scroll-y="true" scroll-top="{{scrollTop}}">
     <block wx:for="{{messages}}" wx:key="index">
       <view class="message-container {{item.type}}">
@@ -17,11 +20,13 @@
       </view>
     </block>
   </scroll-view>
+
   <view class="input-container">
-  <view class="input-inner-container">
-    <van-icon size="22px" name="location-o" />
-    <van-field value="{{inputText}}" placeholder="向我说点悄悄话吧" bind:input="onInput" input-align="left" />
+    <view class="input-inner-container">
+      <image class="new-topic" src= "/images/clear_blue.png"></image>
+      <van-field value="{{inputText}}" placeholder="向我说点悄悄话吧" bind:input="onInput" input-align="left" />
     </view>
-    <van-button round type="primary" size="small" bind:tap="sendMessage" disabled="{{!isInputActive}}">发送</van-button>
+    <van-button round type="info" size="small" bind:tap="sendMessage" disabled="{{!isInputActive}}">发送</van-button>
   </view>
+
 </view>

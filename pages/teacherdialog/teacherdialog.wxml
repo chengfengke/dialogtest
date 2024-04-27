@@ -22,7 +22,11 @@
 </scroll-view>
 
   <view class="input-container">
-    <input class="input" placeholder="请向我提问" bindinput="onInput" value="{{inputText}}" />
-    <button class="send-btn {{isInputActive ? 'active' : ''}}" bindtap="sendMessage">发送</button>
-  </view>
+    <view class="input-inner-container">
+      <image class="new-topic" src= "/images/clear_blue.png"></image>
+      <van-field value="{{inputText}}" placeholder="请向我提问" bind:input="onInput" input-align="left" />
+    </view>
+    <van-button round type="info" size="small" bind:tap="sendMessage" disabled="{{!isInputActive}}">发送</van-button>
 </view>
+</view>
+

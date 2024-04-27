@@ -4,6 +4,7 @@
     "pages/index/index",
     "pages/studentdialog/studentdialog",
     "pages/teacherdialog/teacherdialog",
+
     "pages/logs/logs",
     "pages/profile/profile",
     "pages/line/line",

@@ -8,12 +8,12 @@
 
 /* 顶部栏样式 */
 .top-bar {
-  margin-top: 30px;
+  margin-top: 50rpx;
   display: flex; /* 使用flex布局 */
   flex-direction: row;
   align-items:center;
   width: 100%; /* 根据需要，您可以设置顶部栏的宽度 */
-  padding: 0 10px;
+  padding: 0 10rpx;
   box-sizing: border-box; /* 使内边距不影响总宽度 */
 }
 
@@ -24,6 +24,11 @@
   margin-right: 10px;
 }
 
+.messages {
+  flex: 1; /* 消息视图填充可用空间 */
+  overflow-y: auto; /* 允许在Y轴上滚动 */
+  padding: 10px 5px; /* 调整内边距，确保消息显示不会太紧凑 */
+}
 /* 消息容器样式 */
 .message-container {
   display: flex;
@@ -147,13 +152,38 @@
   padding-top: 5px;
 }
 
-.send-btn {
-  flex: 1; /* 发送按钮的占比 */
-  width: 50px; /* 按钮宽度 */
-  background-color: gray;
-  color: #ffffff;
-  border: 5px;
-  border-radius: 15px;
-  padding: 5px;
-  text-align: center;
+.input-container {
+  display: flex;
+  justify-content: space-between; /* 确保组件之间有空隙 */
+  align-items: center; /* 垂直居中 */
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 45vh;
+  background-color: #FFF; /* 或者根据您的UI主题颜色 */
+  border-top: none; /* 取消顶部边界线 */
+  border-radius: 30px; /* 调整这个值来改变圆角的弯曲程度 */
+  border-color: #FFF;
+}
+.input-inner-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 0;
+}
+.new-topic{
+  height: 50rpx;
+  width: 50rpx;
+  margin-left: 25rpx;
+  margin-right: 5rpx;
+}
+.van-field {
+  margin-left: 1px;
+  flex-grow: 1; /* 输入框填充剩余空间 */
+  margin-right: 1px; /* 保持按钮和输入框的间距 */
+
+}
+
+.van-button {
+  min-width: 20px; /* 保证按钮宽度足够 */
+  margin-right: 20rpx;
 }
