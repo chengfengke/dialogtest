@@ -1,13 +1,15 @@
 // app.js
+wx.cloud.init();
+const db = wx.cloud.database();
+
 App({
   globalData: {
     activeTab: 'chat',
-    userInfo: null
+    userInfo: null,
+    db:db,
   },
   onLaunch() {
     // 展示本地存储能力
-    wx.cloud.init();
-    const db = wx.cloud.database();
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)

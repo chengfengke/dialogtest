@@ -11,6 +11,7 @@ Page({
         desc: '用于完善会员资料', // 这里填写一些说明，告知用户为什么需要这些数据
         success: (res) => {
           console.log('用户信息', res.userInfo);
+          const db = getApp().globalData.db;
           db.collection('users').add({
             data: {
               openid: openid,
