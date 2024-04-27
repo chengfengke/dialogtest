@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@vant/weapp": "^1.11.5",
-    "echarts": "^5.5.0"
+    "echarts": "^5.5.0",
+    "wx-server-sdk": "^3.0.1"
   }
 }

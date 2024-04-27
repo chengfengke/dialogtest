@@ -1,7 +1,6 @@
 // app.js
 wx.cloud.init();
 const db = wx.cloud.database();
-
 App({
   globalData: {
     activeTab: 'chat',
