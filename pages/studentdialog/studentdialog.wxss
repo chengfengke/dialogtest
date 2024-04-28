@@ -159,3 +159,21 @@
   height: 50px; /* 设置图像的固定高度 */
   border-radius: 20px;
 }
+
+.history-button {
+  position: absolute;
+  top: 100px; /* Adjust the position as needed */
+  left: 0;
+  z-index: 1; /* Ensure it appears above the scroll-view */
+  /* Apply your button styling here */
+}
+
+/* 新建对话按钮样式 */
+.new-conversation {
+  position: absolute;
+  bottom: 80px; /* Adjust if you have an input container at the bottom */
+  right: 0;
+  z-index: 1; /* Ensure it appears above the scroll-view */
+  /* Apply your button styling here */
+}
+
