@@ -7,7 +7,7 @@ Page({
     appAvatar: "/images/avatar.png", // 小程序头像路径
     integral: 100, // 积分显示
     isVoiceInput: false, // 是否为语音输入模式
-    messages: [{'type': 'bot', 'content': '你好，很高兴能为你提供帮助。请问你有什么问题或者困扰呢？'}], // 存储对话消息
+    messages: ["您好，欢迎来到心理咨询室。请告诉我，你今天遇到了什么问题？"], // 存储对话消息
     inputText: '', // 用户输入的文本
     currentWord: 0, // 已经输入的字符长度
     systemMessageLength: 0, // 系统消息的字符长度
@@ -30,21 +30,22 @@ Page({
     const { inputText, messages } = this.data;
     if (inputText.trim() === '') return;
 
-    messages.push({ type: 'user', content: inputText });
-    this.setData({
+
+    messages.push({ type: 'user', content: inputText});
+    this.setData({ 
       messages, 
       inputText: '',
       currentWord: inputText.length,
       isInputActive: false,
     });
     const self = this;
-    console.log(self.data.messages);
+
+    
     wx.request({
       url: 'http://localhost:6006/dialogue', // 您的服务器API地址
       method: 'POST',
       data: {
-        message: inputText,
-        messages: messages.slice(1,-1), // 添加messages数组到请求数据中
+        'message' : inputText,
       },
       header: {
         'Content-Type': 'application/json',
@@ -58,7 +59,7 @@ Page({
         }, 500);
         self.autoScroll();
       },
-      
+        
       fail: function(err) {
         console.error('调用失败', err);
       }
@@ -90,24 +91,33 @@ typeMessage(message, index) {
       updatedMessages.push({ type: 'bot', content: nextMessage });
     }
     self.setData({ messages: updatedMessages });
-    console.log(self.data.messages);
     // 设置下一次更新的定时器
     setTimeout(() => {
       self.typeMessage(message, nextIndex);
     }, 100); // 逐字更新的速度，可以根据需要调整
   }
 },
-typeMessage1(message) {
-  const updatedMessages = this.data.messages;
-  updatedMessages.push({ type: 'bot', content: message });
-  this.setData({ messages: updatedMessages });
-},
+  onLoad(options){
+    const self = this;
+    wx.request({
+      url: 'http://localhost:6006/dialogue', // 您的服务器API地址
+      method: 'POST',
+      data: {
+        'message' : "清空历史数据",
+      },
+      header: {
+        'Content-Type': 'application/json',
+      },
 
-onLoad(options){
-},
-  createNewConversation() {
-    this.setData({
-      messages: []
+      success: function(res) {
+        console.log('调用成功', res.data);
+        const systemReply = res.data.response;
+        self.typeMessage(systemReply, 0); // 调用逐字显示的函数
+      },
+        
+      fail: function(err) {
+        console.error('调用失败', err);
+      }
     })
-  }
+  },
 });
