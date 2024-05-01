@@ -10,11 +10,11 @@
   <!-- Record list -->
   <scroll-view class="history-scroll" scroll-y="true" style="height: 100%;">
     <block wx:for="{{history}}" wx:key="index">
-      <view class="record">
+      <view class="record" bind:tap="navigateToChat" data-messages="{{item.messages}}" data-id="{{item._id}}">
         <view class="title">{{item.messages[1].content}}</view>
         <view class="timestamp">{{item.timestamp}}</view>
         <!-- Vant Weapp delete icon -->
-        <van-icon name="delete" class="delete-icon" bindtap="deleteRecord" data-id="{{item._id}}" />
+        <van-icon name="delete" class="delete-icon" catchtap="deleteRecord" data-id="{{item._id}}" />
       </view>
     </block>
     <!-- Footer message indicating end of the list -->

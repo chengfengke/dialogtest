@@ -4,6 +4,41 @@ Page({
     openid: ""
   },
 
+  navigateToChat: function(event) {
+    const self = this;
+    const recordId = event.currentTarget.dataset.id; // 获取记录的_id
+    const messages = event.currentTarget.dataset.messages;
+  
+    // 直接执行删除操作
+    const db = getApp().globalData.db;
+    db.collection('dialog_history').doc(recordId).remove({
+      success: function() {
+        wx.showToast({
+          title: '记录已删除',
+          icon: 'success',
+          duration: 2000
+        });
+        // 从历史记录数组中移除已删除的记录
+        const updatedHistory = self.data.history.filter(item => item._id !== recordId);
+        self.setData({
+          history: updatedHistory
+        });
+        // 删除后立即跳转到聊天页面，携带消息数组
+        wx.navigateTo({
+          url: `/pages/studentdialog/studentdialog?messages=${encodeURIComponent(JSON.stringify(messages))}`
+        });
+      },
+      fail: function(err) {
+        wx.showToast({
+          title: '删除失败',
+          icon: 'none',
+          duration: 2000
+        });
+        console.error('删除记录失败：', err);
+      }
+    });
+  },  
+
   onLoad: function() {
     wx.cloud.callFunction({
       name: 'getWXContext',
@@ -62,6 +97,7 @@ Page({
       }
     });
   },  
+
 
   formatDate: function(date) {
     const newDate = new Date(date);
