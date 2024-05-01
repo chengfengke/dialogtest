@@ -17,6 +17,52 @@ Page({
     })
   },
 
+  deleteRecord: function(event) {
+    const self = this; // 保存当前上下文的引用，以便在回调函数中使用
+    const recordId = event.currentTarget.dataset.id; // 获取记录的_id
+  
+    // 弹窗确认是否删除
+    wx.showModal({
+      title: '确认删除',
+      content: '您确定要删除这条记录吗？',
+      success(res) {
+        if (res.confirm) {
+          // 用户点击了确定
+          const db = getApp().globalData.db;
+          db.collection('dialog_history').doc(recordId).remove({
+            success: function() {
+              wx.showToast({
+                title: '删除成功',
+                icon: 'success',
+                duration: 2000
+              });
+              // 从界面上移除已删除的记录
+              const updatedHistory = self.data.history.filter(item => item._id !== recordId);
+              self.setData({
+                history: updatedHistory
+              });
+            },
+            fail: function(err) {
+              wx.showToast({
+                title: '删除失败',
+                icon: 'none',
+                duration: 2000
+              });
+              console.error('删除记录失败：', err);
+            }
+          });
+        } else if (res.cancel) {
+          // 用户点击了取消
+          wx.showToast({
+            title: '取消删除',
+            icon: 'none',
+            duration: 2000
+          });
+        }
+      }
+    });
+  },  
+
   formatDate: function(date) {
     const newDate = new Date(date);
     return `${newDate.getFullYear()}-${newDate.getMonth() + 1}-${newDate.getDate()}`;

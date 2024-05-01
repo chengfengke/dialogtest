@@ -72,3 +72,17 @@
   color: #666;
   font-size: 14px;
 }
+
+.delete-icon {
+  margin-left: 10px;
+  font-size: 18px; /* 调整图标大小 */
+}
+
+.record {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+

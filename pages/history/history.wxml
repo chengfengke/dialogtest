@@ -13,6 +13,8 @@
       <view class="record">
         <view class="title">{{item.messages[1].content}}</view>
         <view class="timestamp">{{item.timestamp}}</view>
+        <!-- Vant Weapp delete icon -->
+        <van-icon name="delete" class="delete-icon" bindtap="deleteRecord" data-id="{{item._id}}" />
       </view>
     </block>
     <!-- Footer message indicating end of the list -->
