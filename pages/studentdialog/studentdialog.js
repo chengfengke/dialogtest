@@ -90,24 +90,61 @@ typeMessage(message, index) {
       updatedMessages.push({ type: 'bot', content: nextMessage });
     }
     self.setData({ messages: updatedMessages });
-    console.log(self.data.messages);
     // 设置下一次更新的定时器
     setTimeout(() => {
       self.typeMessage(message, nextIndex);
     }, 100); // 逐字更新的速度，可以根据需要调整
   }
 },
-typeMessage1(message) {
-  const updatedMessages = this.data.messages;
-  updatedMessages.push({ type: 'bot', content: message });
-  this.setData({ messages: updatedMessages });
-},
 
 onLoad(options){
 },
-  createNewConversation() {
-    this.setData({
-      messages: []
-    })
-  }
+
+showHistory() {
+  wx.navigateTo({
+    url: '/pages/history/history',
+  })
+},
+createNewConversation() {
+  wx.showToast({
+    title: '欢迎和我倾诉你遇到的问题～',
+    icon: 'none'
+  });
+
+  // Retrieve the openid and store the conversation
+  wx.cloud.callFunction({
+    name: 'getWXContext',
+    success: res => {
+      const openid = res.result.openid;
+      const messages = this.data.messages;
+      const currentTime = new Date();
+
+      console.log('Current messages:', messages);
+
+      // Store the new conversation in the database
+      const db = getApp().globalData.db;
+      db.collection('dialog_history').add({
+        data: {
+          openid: openid,
+          messages: messages,
+          timestamp: currentTime
+        },
+        success: res => {
+          console.log('新对话已保存到数据库', res);
+          // Set the initial message after successfully storing the conversation
+          const initialMessage = [{ 'type': 'bot', 'content': '你好，很高兴能为你提供帮助。请问你有什么问题或者困扰呢？'}];
+          this.setData({
+            messages: initialMessage
+          });
+        },
+        fail: err => {
+          console.error('保存对话失败', err);
+        }
+      });
+    },
+    fail: err => {
+      console.error('获取openid失败', err);
+    }
+  });
+}
 });

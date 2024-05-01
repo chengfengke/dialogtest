@@ -1,0 +1,21 @@
+<view class="container">
+  <!-- Top Bar with back button and title -->
+  <view class="top-bar">
+    <image class="return-icon" src="/images/arrow-left-bold.png" bindtap="goBack"></image>
+    <view class="app-info">
+      <view class="app-name">历史记录</view>
+    </view>
+  </view>
+
+  <!-- Record list -->
+  <scroll-view class="history-scroll" scroll-y="true" style="height: 100%;">
+    <block wx:for="{{history}}" wx:key="index">
+      <view class="record">
+        <view class="title">{{item.messages[1].content}}</view>
+        <view class="timestamp">{{item.timestamp}}</view>
+      </view>
+    </block>
+    <!-- Footer message indicating end of the list -->
+    <view class="footer">这是所有的记录了哟</view>
+  </scroll-view>
+</view>
