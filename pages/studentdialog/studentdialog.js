@@ -201,7 +201,7 @@ createNewConversation() {
         success: res => {
           console.log('新对话已保存到数据库', res);
           // Set the initial message after successfully storing the conversation
-          const initialMessage = [{ 'type': 'bot', 'content': '你好，很高兴能为你提供帮助。请问你有什么问题或者困扰呢？'}];
+          const initialMessage = [{ 'type': 'bot', 'content': '欢迎回来！有什么可以帮助您的吗？'}];
           this.setData({
             messages: initialMessage
           });
