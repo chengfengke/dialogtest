@@ -13,6 +13,11 @@ Page({
     canIUseNicknameComp: wx.canIUse('input.type.nickname'),
     paddingTop : wx.getSystemInfoSync().statusBarHeight+5,
   },
+  navigateTOLogin: function(){
+    wx.navigateTo({
+      url: '/pages/login/login',
+    })
+  },
   navigateToStudent: function() {
     wx.navigateTo({
       url: '/pages/studentdialog/studentdialog',

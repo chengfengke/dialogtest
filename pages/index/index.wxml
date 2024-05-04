@@ -1,7 +1,7 @@
 <view class="page-container">
   <!-- 顶部导航栏 -->
   <view class="top-bar">
-    <image class="return-icon" src="/images/arrow-left-bold.png" bindtap="goBack" ></image>
+    <image class="return-icon" src="/images/arrow-left-bold.png" bindtap="navigateTOLogin" ></image>
     <image class="app-avatar" src="/images/avatar-XiaoXi.png"></image>
     <view class="app-info">
       <view class= "app-name">{{ PageName }}</view>
