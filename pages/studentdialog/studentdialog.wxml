@@ -1,4 +1,5 @@
 <view class="container">
+
   <view class="top-bar">
     <image class="return-icon" src="/images/arrow-left-bold.png" bindtap="goBack" ></image>
     <image class="app-avatar" src="/images/avatar-XiaoXi.png"></image>

@@ -1,40 +1,52 @@
 /* 顶部导航栏 */
-/* 页面容器 */
-.main {
-  height: 400rpx;
+/* 顶部栏样式 */
+.top-bar {
+  margin-top: 80rpx; /*跟其他页面的margin-top不是很一样
+  display: flex; /* 使用flex布局 */
+  flex-direction: row;
+  align-items:center;
+  width: 100%; /* 根据需要，您可以设置顶部栏的宽度 */
+  padding: 0 10rpx;
+  box-sizing: border-box; /* 使内边距不影响总宽度 */
+  margin-bottom: 250rpx;
 }
 
-ec-canvas {
-  width: 100%;
-  height: 100%;
+/* 返回图标样式 */
+.return-icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10px;
 }
 
-.selColor {
-  background: #3FD0AA;
-  color: #ffffff;
+/* 应用头像样式 */
+.app-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 10px;
 }
-.page-container {
-  margin: 0;
-  min-height: 100vh; /* 最小高度设置为视口的100% */
-  padding-bottom: 60px; /* 为底部导航留出空间 */
-  background-color: #e6f7ff; /* 浅蓝色背景 */
-}
-
-.header {
+/* 应用信息样式 */
+.app-info {
   display: flex;
-  align-items: center; /* 确保子项垂直居中 */
-  justify-content: start; /* 子项靠左对齐 */
-  background-color: #007bff; /* 蓝色背景 */
-  padding: 10px 15px; /* 上下各10px，左右各15px的内边距 */
-  height: 70px; /* 导航栏高度 */
-  position: relative; /* 相对定位 */
+  align-items: center;
+  transform: translateX(-10%);
+  flex-direction: column;
+  flex-grow: 1; /* 让app-info填充剩余空间 */
+  margin-right: 10px; 
 }
 
-.nav-icon {
-  position: absolute; /* 绝对定位 */
-  top: 40%; /* 垂直居中 */
-  font-size: 30px;
+/* 应用名称样式 */
+.app-name {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5rpx;
 }
+
+/* 应用描述样式 */
+.app-description {
+  font-size: 10px;
+  color: #999;
+}
+
 /* 导航图标样式 */
 .icon-image {
   width: 30px;
@@ -42,44 +54,67 @@ ec-canvas {
   margin-right: 10px; /* 与标题的间隔 */
 }
 
-/* 顶部标题样式 */
-.header-title {
-  position: absolute; /* 绝对定位 */
-  left: 50%; /* 水平居中 */
-  top: 60%; /* 垂直居中 */
-  transform: translate(-50%, -10px); /* 左右居中并向下移动 */
-  color: #ffffff; /* 字体颜色 */
-  font-size: 18px; /* 字体大小 */
-  font-weight: bold; /* 字体粗细 */
-  text-align: center; /* 文字居中对齐 */
+
+
+/* 页面容器 */
+/* .main {
+  height: 400rpx;
+} */
+
+ec-canvas {
+  width: 100%;
+  height: 100%;
 }
+
+.selColor {
+  background: #ffffff;
+}
+.page-container {
+  margin: 0;
+  min-height: 100vh; /*(最小高度设置为视口的100%*/
+  /* height: 300rpx; */
+  padding-bottom: 60px; /* 为底部导航留出空间 */
+  background-color: #e6f7ff; /* 浅蓝色背景 */
+}
+
+
 
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   margin: 0;
-  padding-bottom: 60px; /* 为底部导航留出空间 */
+  height: 300rpx;
+  padding-bottom: 400rpx; /* 为底部导航留出空间 */
+  background-color: #ffffff;
 }
 
-/* 按钮通用样式 */
+.Avatar{
+  height: 200rpx;
+  width: 200rpx;
+}
+
+.AvatarClick{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300rpx;
+  background: #ffffff;
+
+}
+
+/* 按钮通用样式
 .button {
+  height: 300rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 20px; /* 增加按钮间距 */
-  padding: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 添加阴影 */
-  background-color: #ffffff; /* 背景色 */
-}
-
-/* 图像样式 */
-.avatar {
-  width: 30px; /* 图像大小 */
-  height: 30px;
-  margin-right: 10px; /* 文本间隔 */
-}
+  /* padding: 10px; */
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 添加阴影 */
+  /* background-color: #ffffff; 背景色 */
+/* }  */
 
 /* 文本样式 */
 .text {
