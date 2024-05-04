@@ -1,33 +1,45 @@
 <view class="page-container">
   <!-- 顶部导航栏 -->
-  <view class="header">
-    <view class="nav-section">
-      <view class="nav-icon-holder" bindtap="toggleNavMenu">
-        <!-- 假设这是一个用于打开导航栏的图标 -->
-        <text class="nav-icon">≡</text> 
-      </view>
-      <text class="header-title">想帮助你的积极心理专家</text>
+  <view class="top-bar">
+    <image class="return-icon" src="/images/arrow-left-bold.png" bindtap="goBack" ></image>
+    <image class="app-avatar" src="/images/avatar-XiaoXi.png"></image>
+    <view class="app-info">
+      <view class= "app-name">{{ appName }}</view>
+      <view class = " app-description"> {{appDescription}}</view>
     </view>
   </view>
+
     <view class="container">
       <!-- 学生按钮 -->
-      <van-button round block custom-class="button student" bind:tap="navigateToStudent">
+      <button class = "AvatarClick" bind:tap="navigateToStudent">
+        <image class = "Avatar" src="/images/StudentAvatar.png"></image>
+        <text>我是学生</text>
+      </button>
+
+      <button class = "AvatarCLick" bind:tap = "navigateToTeacher">
+        <image class = "Avatar" src = "/images/TeacherAvatar.png"> </image>
+        <text>我是老师</text>
+      </button>
+
+      <!-- <van-button round block custom-class="button student" bind:tap="navigateToStudent">
         <van-image fit="cover" src="/images/student.png" custom-class="avatar"/>
         <text>我是学生，我需要治疗</text>
-      </van-button>
+      </van-button> -->
 
       <!-- 老师按钮 -->
-      <van-button round block custom-class="button teacher" bind:tap="navigateToTeacher">
+      <!-- <van-button round block custom-class="button teacher" bind:tap="navigateToTeacher">
         <van-image fit="cover" src="/images/teacher.png" custom-class="avatar"/>
         <text>我是老师，我需要训练</text>
-      </van-button>
-        <view class="demo-container">
+      </van-button> -->
+
+        <!-- <view class="demo-container">
           <van-cell-group>
             <van-cell title="功能描述一" icon="location-o" />
             <van-cell title="功能描述二" icon="like-o" />
             <van-cell title="功能描述三" icon="star-o" />
             <!-- 更多功能描述... -->
-          </van-cell-group>
-</view>
+          <!-- </van-cell-group>
+      </view> -->
+
   </view>
 </view>
