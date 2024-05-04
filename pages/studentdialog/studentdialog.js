@@ -174,6 +174,16 @@ showHistory: function() {
   });
 },
 
+clearConversation() {
+  wx.showToast({
+    title: '欢迎和我倾诉你遇到的问题～',
+    icon: 'none'
+  });
+  const initialMessage = [{ 'type': 'bot', 'content': '欢迎回来！有什么可以帮助您的吗？'}];
+  this.setData({
+    messages: initialMessage
+  });
+},
 createNewConversation() {
   wx.showToast({
     title: '欢迎和我倾诉你遇到的问题～',
