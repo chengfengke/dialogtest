@@ -9,7 +9,7 @@
     </view>
   </view>
   
-  <button class="history-button" bindtap="showHistory">历史</button>
+  <van-button class="history-button" icon="clock-o" bindtap="showHistory">历史</van-button>
   <scroll-view class="messages" scroll-y="true" scroll-top="{{scrollTop}}">
     <block wx:for="{{messages}}" wx:key="index">
       <view class="message-container {{item.type}}">
@@ -21,7 +21,7 @@
       </view>
     </block>
   </scroll-view>
-  <button class="new-conversation" bindtap="createNewConversation">新建会话</button>
+  <van-button class="new-conversation" icon="edit" bindtap="createNewConversation">新建会话</van-button>
   <view class="input-container">
     <view class="input-inner-container">
       <image class="new-topic" src= "/images/clear_blue.png" bind:tap="clearConversation"></image>
