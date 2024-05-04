@@ -5,9 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-     username:"Nova",
+     username:"",
      coinamount:999,
-     userID:"10086",
+     userID:"",
   },
 
   navigateToChat: function() {
@@ -24,7 +24,37 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    console.log("hihihihihihi")
+    wx.cloud.callFunction({
+      name: 'getWXContext',
+      success: res => {
+        console.log('openid:', res.result.openid);
+        this.setData({
+          UserID: res.result.openid,
+        })
+      },
+      fail: err => {
+        console.error('获取openid失败', err);
+      }
+    });
+    // 查询数据库获取用户信息
+    const db = getApp().globalData.db;
+    db.collection('users').where({
+      openid: this.data.openid
+    }).get({
+      success: res => {
+        console.log("resdata",res.data)
+        if (res.data.length > 0) {
+          this.setData({
+            username: res.data[0].nickName, // 设置 username 为数据库中查询到的 
+            userID: res.data[0].openid
+          });
+        }
+      },
+      fail: err => {
+        console.error('[数据库] [查询记录] 失败：', err);
+      }
+    });
   },
 
   /**
