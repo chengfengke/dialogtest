@@ -4,19 +4,19 @@
     <image class="return-icon" src="/images/arrow-left-bold.png" bindtap="goBack" ></image>
     <image class="app-avatar" src="/images/avatar-XiaoXi.png"></image>
     <view class="app-info">
-      <view class= "app-name">{{ appName }}</view>
+      <view class= "app-name">{{ PageName }}</view>
       <view class = " app-description"> {{appDescription}}</view>
     </view>
   </view>
 
     <view class="container">
       <!-- 学生按钮 -->
-      <button class = "AvatarClick" bind:tap="navigateToStudent">
+      <button class = "StudentClick" bind:tap="navigateToStudent">
         <image class = "Avatar" src="/images/StudentAvatar.png"></image>
         <text>我是学生</text>
       </button>
 
-      <button class = "AvatarCLick" bind:tap = "navigateToTeacher">
+      <button class = "TeacherClick" bind:tap = "navigateToTeacher">
         <image class = "Avatar" src = "/images/TeacherAvatar.png"> </image>
         <text>我是老师</text>
       </button>

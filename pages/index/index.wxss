@@ -1,14 +1,14 @@
 /* 顶部导航栏 */
 /* 顶部栏样式 */
 .top-bar {
-  margin-top: 80rpx; /*跟其他页面的margin-top不是很一样
-  display: flex; /* 使用flex布局 */
+  margin-top: 100rpx; /*跟其他页面的margin-top不是很一样*/
+  display: flex; /*使用flex布局*/
   flex-direction: row;
   align-items:center;
   width: 100%; /* 根据需要，您可以设置顶部栏的宽度 */
   padding: 0 10rpx;
   box-sizing: border-box; /* 使内边距不影响总宽度 */
-  margin-bottom: 250rpx;
+  margin-bottom: 100rpx;
 }
 
 /* 返回图标样式 */
@@ -74,7 +74,7 @@ ec-canvas {
   min-height: 100vh; /*(最小高度设置为视口的100%*/
   /* height: 300rpx; */
   padding-bottom: 60px; /* 为底部导航留出空间 */
-  background-color: #e6f7ff; /* 浅蓝色背景 */
+  background-color: #ffffff; /* 浅蓝色背景 */
 }
 
 
@@ -82,28 +82,41 @@ ec-canvas {
 .container {
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
   margin: 0;
-  height: 300rpx;
-  padding-bottom: 400rpx; /* 为底部导航留出空间 */
+  height: 1000rpx;
   background-color: #ffffff;
 }
 
 .Avatar{
-  height: 200rpx;
-  width: 200rpx;
+  height: 280rpx;
+  width: 280rpx;
 }
 
-.AvatarClick{
+.StudentClick{
+  margin-top: 200px;
+  margin-left: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  height: 500rpx;
+  width: 320rpx;
+  background: #ffffff;
+  border: 0.5rem solid #FFECEC;
+}
+.TeacherClick{
+  margin-bottom: 200rpx;
+  margin-right: 40rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 300rpx;
+  justify-content: center;
+  height: 500rpx;
+  width: 320rpx;
   background: #ffffff;
-
+  border: 0.5rem solid #5583E3;
 }
-
 /* 按钮通用样式
 .button {
   height: 300rpx;
@@ -123,14 +136,6 @@ ec-canvas {
 }
 
 
-/* 展示区域的容器样式 */
-.demo-container {
-  background-color: lightpink; /* 浅粉色背景 */
-  margin: 16px;
-  padding: 10px;
-  border-radius: 8px; /* 圆角 */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
-}
 
 /* Vant Cell 样式调整，如果需要的话 */
 .van-cell {
