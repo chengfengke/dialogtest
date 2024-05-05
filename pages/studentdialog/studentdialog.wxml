@@ -13,7 +13,7 @@
   <scroll-view class="messages" scroll-y="true" scroll-top="{{scrollTop}}">
     <block wx:for="{{messages}}" wx:key="index">
       <view class="message-container {{item.type}}">
-        <image wx:if="{{item.type === 'bot'}}" src="/images/psychologist.gif" class="bot-gif"/>
+        <image wx:if="{{item.type === 'bot'}}" src="/images/holdkimi.png" class="bot-gif"/>
         <view class="message {{item.type}}">
           {{item.content}}
         </view>
@@ -22,12 +22,13 @@
     </block>
   </scroll-view>
   <van-button class="new-conversation" icon="edit" bindtap="createNewConversation">新建会话</van-button>
+  
+
+
   <view class="input-container">
-    <view class="input-inner-container">
-      <image class="new-topic" src= "/images/clear_blue.png" bind:tap="clearConversation"></image>
-      <van-field value="{{inputText}}" placeholder="向我说点悄悄话吧" bind:input="onInput" input-align="left" />
-    </view>
-    <van-button round type="info" size="small" bind:tap="sendMessage" disabled="{{!isInputActive}}">发送</van-button>
+    <image class="new-topic" src= "/images/clear_blue.png" bind:tap="clearConversation"></image>
+    <textarea class="input-textarea" placeholder="向我说点悄悄话吧"  value="{{inputText}}" auto-height="{{true}}" bindinput="onInput"></textarea>
+    <van-button class="sendButton" round type="info" size="small" bindtap="sendMessage" disabled="{{!isInputActive}}">发送</van-button>
   </view>
 
 </view>

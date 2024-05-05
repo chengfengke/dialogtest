@@ -84,3 +84,23 @@
 .highlight {
   color: #576b95;
 }
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.input-label {
+  font-size: 16px;
+  color: #333;
+}
+
+.input-code {
+  flex-grow: 1;
+  margin-left: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

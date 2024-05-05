@@ -97,7 +97,7 @@
   margin-left: auto;
   border-radius: 15px 0px 15px 15px;
   color: white; /* 用户消息字体颜色 */
-  text-align: right; /* 文本右对齐 */
+  text-align: left; /* 文本右对齐 */
   align-self: flex-end; 
 }
 
@@ -112,24 +112,38 @@
 
 .input-container {
   display: flex;
-  justify-content: space-between; /* 确保组件之间有空隙 */
-  align-items: center; /* 垂直居中 */
+  justify-content: space-between;
+  align-items: center;
   padding-left: 15px;
   padding-right: 15px;
-  width: 45vh;
-  background-color: #FFF; /* 或者根据您的UI主题颜色 */
-  border-top: none; /* 取消顶部边界线 */
-  border-radius: 30px; /* 调整这个值来改变圆角的弯曲程度 */
+  width: 100%; /* 宽度调整为100%，以填满底部空间 */
+  background-color: #FFF;
+  position: fixed; /* 确保输入框固定在底部 */
+  bottom: 10px; /* 从底部向上调整 */
+  border-top: 1px solid #ccc; /* 添加顶部边框 */
+  border-radius: 30px;
+  margin-bottom: 6px; /* 新增底部边距，将边框往上挪 */
+  box-shadow: 0px -2px 4px rgba(0,0,0,0.05); /* 更新阴影效果 */
+  padding-top: 6px;
 }
-.input-inner-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-left: 0;
+
+.input-textarea {
+  flex: 1;  /* 确保文本框占满剩余空间 */
+  margin-left: 6px;
+  margin-right: 6px;  /* 与发送按钮的间距 */
+  border: 1px solid #ccc; /* 添加灰色的边框 */
+  padding: 5px 12px;
+  border-radius: 20px; /* 边框半径，调整此值可以控制椭圆形状的弯曲程度 */
+  outline: none; /* 去除点击时的默认边框线 */
+}
+
+.sendButton {
+  padding-right: 3px;
 }
 .new-topic{
   height: 50rpx;
   width: 50rpx;
+  margin-bottom: 5rpx;
   margin-left: 25rpx;
   margin-right: 5rpx;
 }
@@ -146,7 +160,7 @@
 .messages {
   flex: 1; /* 消息视图填充可用空间 */
   overflow-y: auto; /* 允许在Y轴上滚动 */
-  padding: 10px 5px; /* 调整内边距，确保消息显示不会太紧凑 */
+  padding: 10px 5px 36px 5px; /* 调整内边距，确保消息显示不会太紧凑 */
 }
 
 .bot-gif {

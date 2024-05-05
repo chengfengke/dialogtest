@@ -12,6 +12,10 @@
     <button class="phone-login"><van-icon class="phone-icon" size="25px" name="phone" />
     <text class="phone-text">手机号码登录</text></button>
   </view>
+  <view class="input-container">
+    <text class="input-label">邀请码：</text>
+    <input class="input-code" type="text" placeholder="请输入邀请码" bindinput="onInputCode"/>
+  </view>
   <view class="footer">
     <van-checkbox icon-size="15px" checked-color="black" value="{{checked}}" bind:change="onChange" >已阅读并同意<span class="highlight">《服务协议》</span>和<span class="highlight">《隐私权政策》</span></van-checkbox>
   </view>

@@ -17,9 +17,14 @@ Page({
     isInputActive: false,
     scrollTop: "",
   },
+  
   onInput(event) {
-    this.setData({ inputText: event.detail,isInputActive: event.detail.trim() !== ''});
+    this.setData({
+      inputText: event.detail.value, // 使用 event.detail.value 获取输入值
+      isInputActive: event.detail.value.trim() !== '' // 使用 trim() 方法检查输入是否非空
+    });
   },
+
   goBack: function() {
     this.saveConversation(() => {
       wx.switchTab({
@@ -30,42 +35,41 @@ Page({
   //用户点击发送按钮时触发
   sendMessage() {
     const { inputText, messages } = this.data;
-    if (inputText.trim() === '') return;
-
-    messages.push({ type: 'user', content: inputText });
+    if (inputText.trim() === '') return; // 直接使用 inputText，因为它已经是文本
+  
+    messages.push({ type: 'user', content: inputText }); // 直接使用 inputText
     this.setData({
-      messages, 
+      messages,
       inputText: '',
-      currentWord: inputText.length,
-      isInputActive: false,
+      currentWord: inputText.length, // 直接使用 inputText 的长度
+      isInputActive: false
     });
     const self = this;
     console.log(self.data.messages);
     wx.request({
-      url: 'http://localhost:6006/dialogue', // 您的服务器API地址
+      url: 'http://localhost:6006/dialogue',
       method: 'POST',
       data: {
-        message: inputText,
-        messages: messages.slice(1,-1), // 添加messages数组到请求数据中
+        message: inputText, // 直接使用 inputText
+        messages: messages.slice(1, -1),
       },
       header: {
         'Content-Type': 'application/json',
       },
-
       success: function(res) {
         console.log('调用成功', res.data);
         const systemReply = res.data.response;
         setTimeout(() => {
-          self.typeMessage(systemReply, 0); // 调用逐字显示的函数
+          self.typeMessage(systemReply, 0);
         }, 500);
         self.autoScroll();
       },
-      
       fail: function(err) {
         console.error('调用失败', err);
       }
     });
   },
+
   autoScroll(res) {
     var that = this
     let query = wx.createSelectorQuery()
@@ -184,12 +188,12 @@ clearConversation() {
     messages: initialMessage
   });
 },
+
 createNewConversation() {
   wx.showToast({
     title: '欢迎和我倾诉你遇到的问题～',
     icon: 'none'
   });
-
   // Retrieve the openid and store the conversation
   wx.cloud.callFunction({
     name: 'getWXContext',
