@@ -1,0 +1,74 @@
+/* pages/identity/identity.wxss */
+/* 全局容器样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* 顶部栏样式 */
+.top-bar {
+  margin-top: 50rpx;
+  display: flex; /* 使用flex布局 */
+  flex-direction: row;
+  align-items:center;
+  width: 100%; /* 根据需要，您可以设置顶部栏的宽度 */
+  padding: 0 10rpx;
+  box-sizing: border-box; /* 使内边距不影响总宽度 */
+}
+
+/* 返回图标样式 */
+.return-icon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10px;
+}
+
+/* 应用头像样式 */
+.app-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 10px;
+}
+/* 应用信息样式 */
+.app-info {
+  display: flex;
+  align-items: center;
+  transform: translateX(-10%);
+  flex-direction: column;
+  flex-grow: 1; /* 让app-info填充剩余空间 */
+  margin-right: 10px; 
+}
+
+/* 应用名称样式 */
+.app-name {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5rpx;
+}
+
+/* 应用描述样式 */
+.app-description {
+  font-size: 10px;
+  color: #999;
+}
+
+/* 导航图标样式 */
+.icon-image {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px; /* 与标题的间隔 */
+}
+
+/* 顶部标题样式 */
+.header-title {
+  position: absolute; /* 绝对定位 */
+  left: 50%; /* 水平居中 */
+  top: 60%; /* 垂直居中 */
+  transform: translate(-50%, -10px); /* 左右居中并向下移动 */
+  color: #ffffff; /* 字体颜色 */
+  font-size: 18px; /* 字体大小 */
+  font-weight: bold; /* 字体粗细 */
+  text-align: center; /* 文字居中对齐 */
+}

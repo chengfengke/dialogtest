@@ -19,7 +19,7 @@
       <button class="function-item" data-type="contact" bindtap="onFunctionTap"> 
         <image class="function-icon" src="/images/erji.png" />联系客服
       </button>
-      <button class="function-item" data-type="edit" bindtap="onFunctionTap"> 
+      <button class="function-item" data-type="edit" bindtap="navigateToIdentity"> 
         <image class="function-icon" src="/images/editprofile.png" />编辑资料
       </button>
       <button class="function-item" data-type="info" bindtap="onFunctionTap">

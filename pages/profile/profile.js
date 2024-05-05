@@ -20,6 +20,11 @@ Page({
       url: '/pages/profile/profile',
     });
   },
+  navigateToIdentity:function(){
+    wx.navigateTo({
+      url: '/pages/identity/identity',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

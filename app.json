@@ -8,7 +8,8 @@
     "pages/profile/profile",
     "pages/line/line",
     "custom-tab-bar/index",
-    "pages/history/history"
+    "pages/history/history",
+    "pages/identity/identity"
   ],
   "window": {
     "navigationBarTextStyle": "black",
