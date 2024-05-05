@@ -1,7 +1,7 @@
 <!--pages/identity/identity.wxml-->
 <view class="container">
   <view class="top-bar">
-      <image class="return-icon" src="/images/arrow-left-bold.png" bindtap="goBack" ></image>
+      <image class="return-icon" src="/images/arrow-left-bold.png" bindtap="navigateToProfile" ></image>
       <image class="app-avatar" src="/images/avatar-XiaoXi.png"></image>
       <view class="app-info">
         <view class= "app-name">{{ appName }}</view>

@@ -9,7 +9,7 @@
 
 /* 顶部栏样式 */
 .top-bar {
-  margin-top: 50rpx;
+  margin-top: 60rpx;
   display: flex; /* 使用flex布局 */
   flex-direction: row;
   align-items:center;

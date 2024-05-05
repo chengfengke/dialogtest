@@ -5,9 +5,13 @@ Page({
    * Page initial data
    */
   data: {
-
+    appName:"编辑资料",
   },
-
+  navigateToProfile: function() {
+    wx.navigateTo({
+      url: '/pages/profile/profile',
+    });
+  },
   /**
    * Lifecycle function--Called when page load
    */
