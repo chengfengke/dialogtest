@@ -2,7 +2,7 @@
   <view class="status-bar"></view>
   <view class="header">
     <image src="{{avatarPath}}" class="avatar"></image>
-    <text class="title">Hi, 我是小希</text>
+    <text class="title">Hi, 我是清小华</text>
   </view>
   
   <view class="button-container">
@@ -20,3 +20,4 @@
     <van-checkbox icon-size="15px" checked-color="black" value="{{checked}}" bind:change="onChange" >已阅读并同意<span class="highlight">《服务协议》</span>和<span class="highlight">《隐私权政策》</span></van-checkbox>
   </view>
 </view>
+

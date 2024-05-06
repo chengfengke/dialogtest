@@ -1,48 +1,46 @@
 Page({
   data: {
-    avatarPath: '/images/avatar-XiaoXi.png', // 您会提供的头像路径
+    avatarPath: '/images/avatar-XiaoXi.png', // Path to the avatar image
     checked: false,
     openid: "",
+    inviteCode: "",
+  },
+
+  onInputCode: function(event) {
+    this.setData({
+      inviteCode: event.detail.value,
+    });
   },
 
   onLogin: function() {
-    // 登录逻辑处理
+    wx.cloud.callFunction({
+      name: 'getWXContext',
+      success: res => {
+        console.log('openid:', res.result.openid);
+        this.setData({
+          openid: res.result.openid,
+        });
+      },
+      fail: err => {
+        console.error('获取openid失败', err);
+      }
+    });
     if (this.data.checked) {
-      // 在小程序端调用云函数获取openid
-      wx.cloud.callFunction({
-        name: 'getWXContext',
-        success: res => {
-          console.log('openid:', res.result.openid);
-          this.setData({
-            openid: res.result.openid,
-          });
-
-          // 检查数据库中是否已存在相同openid的用户记录
-          const db = getApp().globalData.db;
-          db.collection('users').where({
-            openid: this.data.openid
-          }).get({
-            success: res => {
-              if (res.data.length > 0) {
-                // 已存在相同openid的用户记录，直接进行登录
-                console.log("用户已存在，直接登录");
-                wx.switchTab({
-                  url: '/pages/index/index',
-                });
-              } else {
-                // 不存在相同openid的用户记录，获取用户信息并添加到数据库
-                this.addUserToDatabase();
-              }
-            },
-            fail: err => {
-              console.error('[数据库] [查询记录] 失败：', err);
-            }
-          });
-        },
-        fail: err => {
-          console.error('获取openid失败', err);
-        }
-      });
+        const self = this;
+        wx.getUserProfile({
+          desc: '用于完善会员资料',
+          success: (profileRes) => {
+            console.log('用户信息:', profileRes.userInfo);
+            self.checkUserExists(profileRes.userInfo);
+          },
+          fail: () => {
+            console.error('用户拒绝授权获取信息');
+            wx.showToast({
+              title: '需要授权以继续!',
+              icon: 'none'
+            });
+          }
+        });
     } else {
       wx.showToast({
         title: '请先阅读并同意相关条款',
@@ -51,38 +49,108 @@ Page({
     }
   },
 
-  addUserToDatabase: function() {
-    wx.getUserProfile({
-      desc: '用于完善会员资料', // 这里填写一些说明，告知用户为什么需要这些数据
-      success: (res) => {
-        console.log('用户信息', res.userInfo);
-        const db = getApp().globalData.db;
-        db.collection('users').add({
-          data: {
-            openid: this.data.openid,
-            nickName: res.userInfo.nickName
-          },
-          success: function(res) {
-            console.log(res);
-          },
-          fail: function(err) {
-            console.error(err);
-          }
-        });
-        // 你可以在这里将用户信息发送到后台服务器
+  validateInviteCode: function(userInfo) {
+    const self = this;
+    const db = getApp().globalData.db;
+    if (!this.data.inviteCode) {
+      wx.showToast({
+        title: '请输入邀请码',
+        icon: 'none'
+      });
+      return;
+    }
+    db.collection('invitecode').where({
+      InviteCode: this.data.inviteCode
+    }).get({
+      success: res => {
+        if(res.data.length === 0) {
+          wx.showToast({
+            title: '无效的邀请码',
+            icon: 'none'
+          });
+        }
+        const inviteCodeId = res.data[0]._id;
+        if (res.data.length > 0 && res.data[0].flag === null) {
+          db.collection('invitecode').doc(inviteCodeId).update({
+            data: {
+              flag: this.data.openid
+            },
+            success: () => {
+              self.addUserToDatabase(userInfo);
+            },
+            fail: err => {
+              console.error('Failed to activate invite code:', err);
+              wx.showToast({
+                title: '激活邀请码失败',
+                icon: 'none'
+              });
+            }
+          });
+        } else if (res.data.length > 0 && res.data[0].ActiveNumber !== null) {
+          console.log("res.data.length > 0 && res.data[0].flag !== null")
+          wx.showToast({
+            title: '这个邀请码已经被使用了',
+            icon: 'none'
+          });
+        } else {
+          wx.showToast({
+            title: '无效的邀请码',
+            icon: 'none'
+          });
+        }
       },
-      fail: () => {
-        // 处理用户拒绝授权的情况
+      fail: err => {
+        console.error('Failed to query invite code:', err);
+        wx.showToast({
+          title: '查询邀请码失败，请检查网络状态',
+          icon: 'none'
+        });
       }
     });
-    wx.switchTab({
-      url: '/pages/index/index',
+  },
+
+  checkUserExists: function(userInfo) {
+    const db = getApp().globalData.db;
+    db.collection('users').where({
+      openid: this.data.openid
+    }).get({
+      success: res => {
+        if (res.data.length > 0) {
+          console.log("用户已存在，直接登录");
+          wx.switchTab({
+            url: '/pages/index/index',
+          });
+        } else {
+          console.log("注册新用户");
+          this.validateInviteCode(userInfo);
+        }
+      },
+      fail: err => {
+        console.error('[数据库] [查询记录] 失败：', err);
+      }
+    });
+  },
+
+  addUserToDatabase: function(userInfo) {
+    const db = getApp().globalData.db;
+    db.collection('users').add({
+      data: {
+        openid: this.data.openid,
+        nickName: userInfo.nickName
+      },
+      success: function(res) {
+        console.log("用户已添加到数据库:", res);
+        wx.switchTab({
+          url: '/pages/index/index',
+        });
+      },
+      fail: function(err) {
+        console.error('添加用户到数据库失败:', err);
+      }
     });
   },
 
   onChange(event) {
-    console.log(event.detail);
-    // event.detail 的值为当前选中项绑定值
     this.setData({ checked: event.detail });
   }
 });

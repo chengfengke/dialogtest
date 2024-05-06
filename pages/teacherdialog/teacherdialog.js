@@ -2,8 +2,8 @@
 const systemAvatarUrl = 'http://eb118-file.cdn.bcebos.com/upload/406469d6dc2b4d1184a63cd51779e68e_1522258076.png?'; 
 Page({
   data: {
-    appName: "老希", // 小程序名称
-    appDescription: "一个积极心理知识训练助手", // 小程序介绍
+    appName: "清小华", // 小程序名称
+    appDescription: "积极心理知识训练助手", // 小程序介绍
     appAvatar: "/images/avatar.png", // 小程序头像路径
     integral: 100, // 积分显示
     isVoiceInput: false, // 是否为语音输入模式
