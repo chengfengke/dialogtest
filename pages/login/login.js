@@ -13,6 +13,10 @@ Page({
   },
 
   onLogin: function() {
+    wx.showLoading({
+      title: '登录中...',
+      mask: true  // 防止触摸穿透
+    });
     wx.cloud.callFunction({
       name: 'getWXContext',
       success: res => {
@@ -23,6 +27,7 @@ Page({
       },
       fail: err => {
         console.error('获取openid失败', err);
+        wx.hideLoading();  
       }
     });
     if (this.data.checked) {
@@ -35,6 +40,7 @@ Page({
           },
           fail: () => {
             console.error('用户拒绝授权获取信息');
+            wx.hideLoading();
             wx.showToast({
               title: '需要授权以继续!',
               icon: 'none'
@@ -42,6 +48,7 @@ Page({
           }
         });
     } else {
+      wx.hideLoading();
       wx.showToast({
         title: '请先阅读并同意相关条款',
         icon: 'none'
@@ -53,6 +60,7 @@ Page({
     const self = this;
     const db = getApp().globalData.db;
     if (!this.data.inviteCode) {
+      wx.hideLoading();
       wx.showToast({
         title: '请输入邀请码',
         icon: 'none'
@@ -64,6 +72,7 @@ Page({
     }).get({
       success: res => {
         if(res.data.length === 0) {
+          wx.hideLoading();
           wx.showToast({
             title: '无效的邀请码',
             icon: 'none'
@@ -80,6 +89,7 @@ Page({
             },
             fail: err => {
               console.error('Failed to activate invite code:', err);
+              wx.hideLoading();
               wx.showToast({
                 title: '激活邀请码失败',
                 icon: 'none'
@@ -87,12 +97,13 @@ Page({
             }
           });
         } else if (res.data.length > 0 && res.data[0].ActiveNumber !== null) {
-          console.log("res.data.length > 0 && res.data[0].flag !== null")
+          wx.hideLoading();  
           wx.showToast({
             title: '这个邀请码已经被使用了',
             icon: 'none'
           });
         } else {
+          wx.hideLoading();
           wx.showToast({
             title: '无效的邀请码',
             icon: 'none'
@@ -101,6 +112,7 @@ Page({
       },
       fail: err => {
         console.error('Failed to query invite code:', err);
+        wx.hideLoading();
         wx.showToast({
           title: '查询邀请码失败，请检查网络状态',
           icon: 'none'
@@ -117,6 +129,7 @@ Page({
       success: res => {
         if (res.data.length > 0) {
           console.log("用户已存在，直接登录");
+          wx.hideLoading();
           wx.switchTab({
             url: '/pages/index/index',
           });
@@ -127,6 +140,7 @@ Page({
       },
       fail: err => {
         console.error('[数据库] [查询记录] 失败：', err);
+        wx.hideLoading();
       }
     });
   },
@@ -140,11 +154,13 @@ Page({
       },
       success: function(res) {
         console.log("用户已添加到数据库:", res);
+        wx.hideLoading();
         wx.switchTab({
           url: '/pages/index/index',
         });
       },
       fail: function(err) {
+        wx.hideLoading();
         console.error('添加用户到数据库失败:', err);
       }
     });
