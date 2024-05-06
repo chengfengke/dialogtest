@@ -1,4 +1,2 @@
-<!--index.wxml-->
-<view class="container">
-  <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
-</view>
+<!--pages/line/line.wxml-->
+<text>pages/line/line.wxml</text>
