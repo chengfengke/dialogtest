@@ -6,6 +6,12 @@ Page({
    */
   data: {
     appName:"编辑资料",
+    Avatar:"/images/student.png",
+    nickname:"bot",
+    gender:"男",
+    birthday:" ",
+    district: " ",
+    info:" ",
   },
   navigateToProfile: function() {
     wx.navigateTo({

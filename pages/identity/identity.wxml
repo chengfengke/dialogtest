@@ -8,4 +8,14 @@
         <view class = " app-description"> {{appDescription}}</view>
       </view>
   </view>
+
+  <image class = "userAvatar" src="{{Avatar}}" />
+  <van-cell-group>
+    <van-cell title="昵称" is-link value = "{{nickname}}"/>
+    <van-cell title="性别" is-link value = "{{gender}}"/>
+    <van-cell title="生日" is-link value = "{{birthday}}"/>
+    <van-cell title="地区" is-link value = "{{district}}"/>
+    <van-cell title="简介" is-link value = "{{info}}"/>
+  </van-cell-group>
 </view>
+

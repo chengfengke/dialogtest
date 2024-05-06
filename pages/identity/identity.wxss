@@ -72,3 +72,18 @@
   font-weight: bold; /* 字体粗细 */
   text-align: center; /* 文字居中对齐 */
 }
+.userAvatar{
+  margin-top: 50rpx;
+  align-self: center;
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 50rpx;
+}
+
+
+/*cell样式*/
+.cell{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
