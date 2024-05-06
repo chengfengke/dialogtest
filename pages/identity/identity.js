@@ -12,6 +12,12 @@ Page({
     birthday:" ",
     district: " ",
     info:" ",
+      show: false
+  },
+  methods:{
+    showPopup(){
+      this.show = true;
+    }
   },
   navigateToProfile: function() {
     wx.navigateTo({

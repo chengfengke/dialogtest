@@ -29,7 +29,9 @@
     "van-icon": "@vant/weapp/icon/index",
     "van-cell": "@vant/weapp/cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",
-    "van-checkbox": "@vant/weapp/checkbox"
+    "van-checkbox": "@vant/weapp/checkbox",
+    "van-picker": "@vant/weapp/picker",
+    "van-popup": "@vant/weapp/popup"
   },
   "tabBar": {
     "custom": true,
