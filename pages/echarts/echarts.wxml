@@ -1,5 +1,0 @@
-<!--pages/echarts/echarts.wxml-->
-<view class="container">
-  <ec-canvas id="mychart-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
-  <text>fuck!</text>
-</view>
