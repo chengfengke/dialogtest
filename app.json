@@ -6,7 +6,6 @@
     "pages/teacherdialog/teacherdialog",
     "pages/logs/logs",
     "pages/profile/profile",
-    "pages/line/line",
     "custom-tab-bar/index",
     "pages/history/history",
     "pages/identity/identity"

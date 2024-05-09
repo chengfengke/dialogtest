@@ -85,6 +85,7 @@ Page({
               flag: this.data.openid
             },
             success: () => {
+              /*跳转到注册再调用 */
               self.addUserToDatabase(userInfo);
             },
             fail: err => {
