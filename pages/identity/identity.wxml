@@ -13,7 +13,7 @@
   <van-cell-group>
     <van-cell title="昵称" is-link value = "{{nickname}}" bind:click = "showNamePopop"/>
       <van-popup show = "{{NamePopup}}" position="bottom" custom-style="height: 50%;" bind:close="onClose">
-        <van-field value = "{{nickname}}" placeholder = "请输入新昵称" bind:input="onNicknameInput"></van-field>
+        <van-field value = "{{nickname}}" placeholder = "请输入你的昵称～" bind:input="onNicknameInput"></van-field>
       </van-popup>
 
     <van-cell title="性别" is-link value="{{ gender }}" bind:click="showGenderPopup" />
@@ -27,11 +27,12 @@
       </van-popup>
 
 
-    <van-cell title="地区" is-link value = "{{district}}" bind:click = "showAreaPopup"/>
+    <van-cell title="地区" is-link value = "{{area}}"  bind:click = "showAreaPopup"/>
       <van-popup show="{{ AreaPopup }}" position="bottom" custom-style="height: 50%;" bind:close="onClose">
+        <van-area :area-list="areaList" value="110101" column-nums="2" bind:confirm = "onAreaConfirm" bind:cancel="onClose"/>
       </van-popup>
 
-    <van-cell title="简介" is-link value = "{{info}}" bind:click = "showInfoPopup"/>
+    <van-cell title="简介" is-link value = "{{info}}" placeholder = "请输入你的简介～" bind:click = "showInfoPopup"/>
       <van-popup show="{{ InfoPopup }}" position="bottom" custom-style="height: 50%;" bind:close="onClose">
         <van-field value = "{{info}}" placeholder = "请输入您的简介" bind:input="onInfoInput"></van-field>
       </van-popup>

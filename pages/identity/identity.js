@@ -11,7 +11,7 @@ Page({
     gender:" ",
     birthday:" ",
     area: " ",
-    info:"...",
+    info:" ",
     
     GenderPopup: false,
     NamePopup:false,
@@ -79,11 +79,17 @@ Page({
       BirthPopup: false
     })
   },
-
+  /*地区弹窗 */
   showAreaPopup(e) {
     this.setData({ AreaPopup: true });
   },
+  onAreaConfirm(e){
+    this.setData({
+      AreaPopup: false
+    })
+  },
 
+  /*简介弹窗 */
   showInfoPopup(e) {
     this.setData({ InfoPopup: true });
   },

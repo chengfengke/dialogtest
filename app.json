@@ -31,7 +31,8 @@
     "van-checkbox": "@vant/weapp/checkbox",
     "van-picker": "@vant/weapp/picker",
     "van-popup": "@vant/weapp/popup",
-    "van-datetime-picker": "@vant/weapp/datetime-picker"
+    "van-datetime-picker": "@vant/weapp/datetime-picker",
+    "van-area":"@vant/weapp/area"
   },
   "tabBar": {
     "custom": true,
