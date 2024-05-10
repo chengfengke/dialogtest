@@ -19,7 +19,7 @@ Page({
     AreaPopop: false,
     InfoPopop: false,
     genderOptions:['男','女','不愿透露'],
-
+    MinDate: "1950-01-01"
   },
   /*关闭弹窗 */
   onClose(e){
@@ -58,8 +58,26 @@ Page({
     }, 100);
   },
 
+  /*生日弹窗 */
   showBirthPopup(e){
     this.setData({ BirthPopup: true})
+  },
+  onBirthdayConfirm(e){
+    // console.log(e); //detail: 1425052800000，好像是时间戳
+    const selectedDate = new Date(e.detail);
+    // 获取年、月、日
+    const year = selectedDate.getFullYear();
+    const month = (selectedDate.getMonth() + 1).toString().padStart(2, '0'); // 月份从 0 开始，需要加 1
+    const day = selectedDate.getDate().toString().padStart(2, '0');
+
+    // 拼接成 YYYY-MM-DD 格式
+    const formattedDate = `${year}-${month}-${day}`;
+
+    // console.log(formattedDate); // 输出：2015-01-01
+    this.setData({
+      birthday: formattedDate,
+      BirthPopup: false
+    })
   },
 
   showAreaPopup(e) {
