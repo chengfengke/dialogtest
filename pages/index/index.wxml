@@ -8,6 +8,20 @@
       <view class = " app-description"> {{appDescription}}</view>
     </view>
   </view>
+  
+  <view class="page-section-swiper">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <swiper-item>
+        <image class = "swiper-images" src="/images/Slide1.jpg" mode = "aspectFill"></image>
+      </swiper-item>
+      <swiper-item>
+        <image class = "swiper-images" src="/images/Slide2.jpg" mode = "aspectFill"></image>
+      </swiper-item>  
+      <swiper-item>
+        <image class = "swiper-images" src="/images/Slide3.JPG" mode = "aspectFill"></image>
+      </swiper-item>
+      </swiper>
+    </view>
 
     <view class="container">
       <!-- 学生按钮 -->
@@ -20,26 +34,24 @@
         <image class = "Avatar" src = "/images/TeacherAvatar.png"> </image>
         <text>我是老师</text>
       </button>
+    </view>
 
-      <!-- <van-button round block custom-class="button student" bind:tap="navigateToStudent">
-        <van-image fit="cover" src="/images/student.png" custom-class="avatar"/>
-        <text>我是学生，我需要治疗</text>
-      </van-button> -->
+    <view class="funcitonlist">
+      <button class= "functionitem">
+        <image src="/images/paperplane.png" mode="" class="ImgButtonIcon"/> 功能一
+      </button>
+      <button class= "functionitem">
+        <image src="/images/writing.png" mode="" class="ImgButtonIcon"/>功能二
+      </button>
+      <button class= "functionitem">
+        <image src="/images/shoppingbag.png" mode="" class="ImgButtonIcon"/>功能三
+      </button>
+      <button class= "functionitem">
+        <image src="/images/books.png" mode="" class="ImgButtonIcon"/>功能四
+      </button>
+      <button class= "functionitem">
+        <image src="/images/box.png" mode="" class="ImgButtonIcon"/>功能四
+      </button>
+    </view>
 
-      <!-- 老师按钮 -->
-      <!-- <van-button round block custom-class="button teacher" bind:tap="navigateToTeacher">
-        <van-image fit="cover" src="/images/teacher.png" custom-class="avatar"/>
-        <text>我是老师，我需要训练</text>
-      </van-button> -->
-
-        <!-- <view class="demo-container">
-          <van-cell-group>
-            <van-cell title="功能描述一" icon="location-o" />
-            <van-cell title="功能描述二" icon="like-o" />
-            <van-cell title="功能描述三" icon="star-o" />
-            <!-- 更多功能描述... -->
-          <!-- </van-cell-group>
-      </view> -->
-
-  </view>
 </view>

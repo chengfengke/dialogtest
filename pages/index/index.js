@@ -12,7 +12,39 @@ Page({
     canIUseGetUserProfile: wx.canIUse('getUserProfile'),
     canIUseNicknameComp: wx.canIUse('input.type.nickname'),
     paddingTop : wx.getSystemInfoSync().statusBarHeight+5,
+
+  
+    indicatorDots: true,
+    vertical: false,
+    autoplay: false,
+    interval: 2000,
+    duration: 500
   },
+  changeIndicatorDots() {
+    this.setData({
+      indicatorDots: !this.data.indicatorDots
+    })
+  },
+
+  changeAutoplay() {
+    this.setData({
+      autoplay: !this.data.autoplay
+    })
+  },
+
+  intervalChange(e) {
+    this.setData({
+      interval: e.detail.value
+    })
+  },
+
+  durationChange(e) {
+    this.setData({
+      duration: e.detail.value
+    })
+  },
+
+
   navigateTOLogin: function(){
     wx.navigateTo({
       url: '/pages/login/login',

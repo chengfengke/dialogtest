@@ -8,7 +8,7 @@
   width: 100%; /* 根据需要，您可以设置顶部栏的宽度 */
   padding: 0 10rpx;
   box-sizing: border-box; /* 使内边距不影响总宽度 */
-  margin-bottom: 100rpx;
+  margin-bottom: 50rpx;
 }
 
 /* 返回图标样式 */
@@ -72,19 +72,31 @@ ec-canvas {
 .page-container {
   margin: 0;
   min-height: 100vh; /*(最小高度设置为视口的100%*/
-  /* height: 300rpx; */
   padding-bottom: 60px; /* 为底部导航留出空间 */
-  background-color: #ffffff; /* 浅蓝色背景 */
+  background-color: #ffffff; 
 }
 
-
+.page-section-swiper{
+  margin-top: 20rpx;
+  display: flex;
+  /* height: 400rpx; */
+  background-color: aqua;
+  margin-bottom: 50rpx;
+  width: 100%;
+}
+.swiper-images{
+  width: 100%;
+  /* height: 200rpx; */
+  border-radius: 0rpx 0rpx 16rpx 16rpx;
+}
 
 .container {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   margin: 0;
-  height: 1000rpx;
+  height: 500rpx;
   background-color: #ffffff;
 }
 
@@ -94,7 +106,6 @@ ec-canvas {
 }
 
 .StudentClick{
-  margin-top: 200px;
   margin-left: 40rpx;
   display: flex;
   flex-direction: column;
@@ -105,8 +116,8 @@ ec-canvas {
   background: #ffffff;
   border: 0.5rem solid #FFECEC;
 }
+
 .TeacherClick{
-  margin-bottom: 200rpx;
   margin-right: 40rpx;
   display: flex;
   flex-direction: column;
@@ -135,7 +146,28 @@ ec-canvas {
   color: #333; /* 字体颜色 */
 }
 
-
+/*功能栏*/
+.funcitonlist{
+  margin-top: 50rpx;
+  display: grid;
+  grid-template-columns:repeat(auto-fill,100px);/** 平铺宽度为100px的单元格 */
+  grid-template-rows: 150rpx;/** 设置高度为100px */
+  grid-auto-rows: 150rpx;/** 当容易高度不够时，多余的组件高度将怎么分配，默认的高度由单元格内容决定 */
+  justify-content: center;/** 水平居中  */
+                        
+}
+.funtionitem {
+  font-size: 1em;
+  border: 1px solid #e5e4e9;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ImgButtonIcon{
+  width: 100rpx;
+  height: 100rpx;
+}
 
 /* Vant Cell 样式调整，如果需要的话 */
 .van-cell {

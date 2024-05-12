@@ -9,6 +9,20 @@
     "miniprogram": {
       "list": [
         {
+          "name": "角色",
+          "pathName": "pages/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "profile",
+          "pathName": "pages/profile/profile",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "编辑资料",
           "pathName": "pages/identity/identity",
           "query": "",
