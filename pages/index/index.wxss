@@ -79,8 +79,8 @@ ec-canvas {
 .page-section-swiper{
   margin-top: 20rpx;
   display: flex;
-  /* height: 400rpx; */
-  background-color: aqua;
+  height: 275 rpx;
+  background-color: rgb(224, 224, 224);
   margin-bottom: 50rpx;
   width: 100%;
 }

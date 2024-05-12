@@ -29,7 +29,7 @@
 
     <van-cell title="地区" is-link value = "{{area}}"  bind:click = "showAreaPopup"/>
       <van-popup show="{{ AreaPopup }}" position="bottom" custom-style="height: 50%;" bind:close="onClose">
-        <van-area :area-list="areaList" value="110101" column-nums="2" bind:confirm = "onAreaConfirm" bind:cancel="onClose"/>
+        <van-area area-list="{{areaList}}" bind:confirm = "onAreaConfirm" bind:cancel="onClose"/>
       </van-popup>
 
     <van-cell title="简介" is-link value = "{{info}}" placeholder = "请输入你的简介～" bind:click = "showInfoPopup"/>

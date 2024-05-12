@@ -1,7 +1,9 @@
 // pages/identity/identity.js
+import {
+  areaList
+} from "../../utils/area-data/dist/data";
 
 Page({
-
   /**
    * Page initial data
    */
@@ -13,7 +15,7 @@ Page({
     birthday:" ",
     area: " ",
     info:" ",
-    
+    areaList:areaList,
     GenderPopup: false,
     NamePopup:false,
     BirthPopop: false,
@@ -88,6 +90,16 @@ Page({
     this.setData({
       AreaPopup: false
     })
+    console.log("确定省市区：",e)
+            var address=""
+            e.detail.values.forEach(element => {
+                address=address+element.name
+            });
+            this.setData({
+                area: address,
+                show: false,
+            })
+    console.log(this.data.area)
   },
 
   /*简介弹窗 */

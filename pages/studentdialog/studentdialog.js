@@ -2,7 +2,7 @@
 const systemAvatarUrl = 'http://eb118-file.cdn.bcebos.com/upload/406469d6dc2b4d1184a63cd51779e68e_1522258076.png?'; 
 Page({
   data: {
-    appName: "清小华", // 小程序名称
+    appName: "清小深", // 小程序名称
     appDescription: "积极心理对话助手", // 小程序介绍
     appAvatar: "/images/avatar.png", // 小程序头像路径
     integral: 100, // 积分显示

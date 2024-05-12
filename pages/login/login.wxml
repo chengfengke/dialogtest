@@ -2,7 +2,7 @@
   <view class="status-bar"></view>
   <view class="header">
     <image src="{{avatarPath}}" class="avatar"></image>
-    <text class="title">Hi, 我是清小华</text>
+    <text class="title">Hi, 我是清小深</text>
   </view>
   
   <view class="button-container">

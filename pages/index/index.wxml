@@ -9,8 +9,7 @@
     </view>
   </view>
   
-  <view class="page-section-swiper">
-      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <swiper class="page-section-swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
       <swiper-item>
         <image class = "swiper-images" src="/images/Slide1.jpg" mode = "aspectFill"></image>
       </swiper-item>
@@ -21,7 +20,6 @@
         <image class = "swiper-images" src="/images/Slide3.JPG" mode = "aspectFill"></image>
       </swiper-item>
       </swiper>
-    </view>
 
     <view class="container">
       <!-- 学生按钮 -->
@@ -38,19 +36,19 @@
 
     <view class="funcitonlist">
       <button class= "functionitem">
-        <image src="/images/paperplane.png" mode="" class="ImgButtonIcon"/> 功能一
+        <image src="/images/paperplane.png" mode="" class="ImgButtonIcon"/>飞
       </button>
       <button class= "functionitem">
-        <image src="/images/writing.png" mode="" class="ImgButtonIcon"/>功能二
+        <image src="/images/writing.jpg" mode="" class="ImgButtonIcon"/>写
       </button>
       <button class= "functionitem">
-        <image src="/images/shoppingbag.png" mode="" class="ImgButtonIcon"/>功能三
+        <image src="/images/shoppingbag.png" mode="" class="ImgButtonIcon"/>查
       </button>
       <button class= "functionitem">
-        <image src="/images/books.png" mode="" class="ImgButtonIcon"/>功能四
+        <image src="/images/books.png" mode="" class="ImgButtonIcon"/>读
       </button>
       <button class= "functionitem">
-        <image src="/images/box.png" mode="" class="ImgButtonIcon"/>功能四
+        <image src="/images/box.png" mode="" class="ImgButtonIcon"/>盒
       </button>
     </view>
 
