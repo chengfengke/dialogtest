@@ -99,7 +99,7 @@ Page({
   },
 
   navigateToProfile: function() {
-    wx.navigateTo({
+    wx.switchTab({
       url: '/pages/profile/profile',
     });
   },
