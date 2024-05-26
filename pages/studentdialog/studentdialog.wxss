@@ -177,7 +177,7 @@
 
 .history-button {
   position: absolute;
-  top: 100px; /* Adjust the position as needed */
+  top: 180px; /* Adjust the position as needed */
   left: 0;
   z-index: 1; /* Ensure it appears above the scroll-view */
   /* Apply your button styling here */
