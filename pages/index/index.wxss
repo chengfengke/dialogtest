@@ -1,7 +1,7 @@
 /* 顶部导航栏 */
 /* 顶部栏样式 */
 .top-bar {
-  margin-top: 100rpx; /*跟其他页面的margin-top不是很一样*/
+  margin-top: 80rpx; /*跟其他页面的margin-top不是很一样*/
   display: flex; /*使用flex布局*/
   flex-direction: row;
   align-items:center;

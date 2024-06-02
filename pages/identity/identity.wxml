@@ -23,7 +23,7 @@
 
     <van-cell title="生日" is-link value = "{{birthday}}" bind:click = "showBirthPopup"/>
       <van-popup show="{{ BirthPopup }}" position="bottom" custom-style="height: 50%;" bind:close="onClose">
-        <van-datetime-picker v-model="currentDate" type="date" min-date= "1960-01-01" value="{{ birthday }}" bind:confirm="onBirthdayConfirm" bind:cancel="onClose"/>
+        <van-datetime-picker type="date" min-date= "1960-01-01" value="{{ birthday }}" bind:confirm="onBirthdayConfirm" bind:cancel="onClose"/>
       </van-popup>
 
 
@@ -38,4 +38,3 @@
       </van-popup>
   </van-cell-group>
 </view>
-

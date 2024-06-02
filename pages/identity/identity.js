@@ -204,23 +204,26 @@ Page({
     this.setData({ BirthPopup: true})
   },
   onBirthdayConfirm(e){
-    // console.log(e); //detail: 1425052800000，好像是时间戳
+    console.log(e.detail)
+    // Convert the timestamp to a Date object
     const selectedDate = new Date(e.detail);
-    // 获取年、月、日
+    console.log(selectedDate)
+    // Extract year, month, and day from the Date object
     const year = selectedDate.getFullYear();
-    const month = (selectedDate.getMonth() + 1).toString().padStart(2, '0'); // 月份从 0 开始，需要加 1
+    const month = (selectedDate.getMonth() + 1).toString().padStart(2, '0');
     const day = selectedDate.getDate().toString().padStart(2, '0');
 
-    // 拼接成 YYYY-MM-DD 格式
+    // Format the date as YYYY-MM-DD
     const formattedDate = `${year}-${month}-${day}`;
-
-    // console.log(formattedDate); // 输出：2015-01-01
+    console.log(formattedDate)
+    // Update the data with the formatted date and close the popup
     this.setData({
       birthday: formattedDate,
       BirthPopup: false
-    })
-    this.onClose(); 
-  },
+    }, () => {
+      this.onClose(); 
+    });
+},
   /*地区弹窗 */
   showAreaPopup(e) {
     this.setData({ AreaPopup: true });
