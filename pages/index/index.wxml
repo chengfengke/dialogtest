@@ -1,8 +1,8 @@
 <view class="page-container">
   <!-- 顶部导航栏 -->
   <view class="top-bar">
-    <image class="return-icon" src="/images/arrow-left-bold.png" bindtap="navigateTOLogin" ></image>
-    <image class="app-avatar" src="/images/avatar-XiaoXi.png"></image>
+    <image class="return-icon" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/arrow-left-bold.png" bindtap="navigateTOLogin" ></image>
+    <image class="app-avatar" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/avatar-XiaoXi.png"></image>
     <view class="app-info">
       <view class= "app-name">{{ PageName }}</view>
       <view class = " app-description"> {{appDescription}}</view>
@@ -11,44 +11,44 @@
   
       <swiper class="page-section-swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
       <swiper-item>
-        <image class = "swiper-images" src="/images/Slide1.jpg" mode = "aspectFill"></image>
+        <image class = "swiper-images" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/Slide1.jpg" mode = "aspectFill"></image>
       </swiper-item>
       <swiper-item>
-        <image class = "swiper-images" src="/images/Slide2.jpg" mode = "aspectFill"></image>
+        <image class = "swiper-images" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/Slide2.jpg" mode = "aspectFill"></image>
       </swiper-item>  
       <swiper-item>
-        <image class = "swiper-images" src="/images/Slide3.JPG" mode = "aspectFill"></image>
+        <image class = "swiper-images" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/Slide3.JPG" mode = "aspectFill"></image>
       </swiper-item>
       </swiper>
 
     <view class="container">
       <!-- 学生按钮 -->
       <button class = "StudentClick" bind:tap="navigateToStudent">
-        <image class = "Avatar" src="/images/StudentAvatar.png"></image>
+        <image class = "Avatar" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/StudentAvatar.png"></image>
         <text>我是学生</text>
       </button>
 
       <button class = "TeacherClick" bind:tap = "navigateToTeacher">
-        <image class = "Avatar" src = "/images/TeacherAvatar.png"> </image>
+        <image class = "Avatar" src = "cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/TeacherAvatar.png"> </image>
         <text>我是老师</text>
       </button>
     </view>
 
     <view class="funcitonlist">
       <button class= "functionitem">
-        <image src="/images/paperplane.png" mode="" class="ImgButtonIcon"/>飞
+        <image src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/paperplane.png" mode="" class="ImgButtonIcon"/>飞
       </button>
       <button class= "functionitem">
-        <image src="/images/writing.jpg" mode="" class="ImgButtonIcon"/>写
+        <image src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/writing.png" mode="" class="ImgButtonIcon"/>写
       </button>
       <button class= "functionitem">
-        <image src="/images/shoppingbag.png" mode="" class="ImgButtonIcon"/>查
+        <image src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/shoppingbag.png" mode="" class="ImgButtonIcon"/>查
       </button>
       <button class= "functionitem">
-        <image src="/images/books.png" mode="" class="ImgButtonIcon"/>读
+        <image src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/books.png" mode="" class="ImgButtonIcon"/>读
       </button>
       <button class= "functionitem">
-        <image src="/images/box.png" mode="" class="ImgButtonIcon"/>盒
+        <image src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/box.png" mode="" class="ImgButtonIcon"/>盒
       </button>
     </view>
 

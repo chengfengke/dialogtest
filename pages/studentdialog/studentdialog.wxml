@@ -1,8 +1,8 @@
 <view class="container">
 
   <view class="top-bar">
-    <image class="return-icon" src="/images/arrow-left-bold.png" bindtap="goBack" ></image>
-    <image class="app-avatar" src="/images/avatar-XiaoXi.png"></image>
+    <image class="return-icon" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/arrow-left-bold.png" bindtap="goBack" ></image>
+    <image class="app-avatar" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/avatar-XiaoXi.png"></image>
     <view class="app-info">
       <view class= "app-name">{{ appName }}</view>
       <view class = " app-description"> {{appDescription}}</view>
@@ -13,11 +13,11 @@
   <scroll-view class="messages" scroll-y="true" scroll-top="{{scrollTop}}">
     <block wx:for="{{messages}}" wx:key="index">
       <view class="message-container {{item.type}}">
-        <image wx:if="{{item.type === 'bot'}}" src="/images/holdkimi.png" class="bot-gif"/>
+        <image wx:if="{{item.type === 'bot'}}" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/holdkimi.png" class="bot-gif"/>
         <view class="message {{item.type}}">
           {{item.content}}
         </view>
-        <image wx:if="{{item.type === 'user'}}" src="/images/student.png" class="user-gif"/>
+        <image wx:if="{{item.type === 'user'}}" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/student.png" class="user-gif"/>
       </view>
     </block>
   </scroll-view>
@@ -26,7 +26,7 @@
 
 
   <view class="input-container">
-    <image class="new-topic" src= "/images/clear_blue.png" bind:tap="clearConversation"></image>
+    <image class="new-topic" src= "cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/clear_blue.png" bind:tap="clearConversation"></image>
     <textarea class="input-textarea" placeholder="向我说点悄悄话吧"  value="{{inputText}}" auto-height="{{true}}" bindinput="onInput"></textarea>
     <van-button class="sendButton" round type="info" size="small" bindtap="sendMessage" disabled="{{!isInputActive}}">发送</van-button>
   </view>

@@ -11,8 +11,8 @@ Page({
     inputText: '', // 用户输入的文本
     currentWord: 0, // 已经输入的字符长度
     systemMessageLength: 0, // 系统消息的字符长度
-    userAvatar: '/images/student.png', // 从index页面获取的用户头像URL
-    systemAvatar: '/images/teacher.png', // 系统固定的头像URL
+    userAvatar: '	cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/student.png', // 从index页面获取的用户头像URL
+    systemAvatar: 'cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/teacher.png', // 系统固定的头像URL
     inputWidth: 100, 
     isInputActive: false,
     scrollTop: "",

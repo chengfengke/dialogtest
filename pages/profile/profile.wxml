@@ -3,7 +3,7 @@
 
     <!-- 用户信息 -->
     <view class="profile">
-        <image class="avatar" src="/images/student.png"/>
+        <image class="avatar" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/student.png"/>
         <text class="username">{{ username }}</text>
         <text class="userid">ID: {{ userID }}</text>
     </view>
@@ -17,16 +17,16 @@
     <!-- 功能列表 -->
     <view class="function-list">
       <button class="function-item" data-type="contact" bindtap="onFunctionTap"> 
-        <image class="function-icon" src="/images/erji.png" />联系客服
+        <image class="function-icon" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/erji.png" />联系客服
       </button>
       <button class="function-item" data-type="edit" bindtap="navigateToIdentity"> 
-        <image class="function-icon" src="/images/editprofile.png" />编辑资料
+        <image class="function-icon" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/editprofile.png" />编辑资料
       </button>
       <button class="function-item" data-type="info" bindtap="onFunctionTap">
-        <image class="function-icon" src="/images/info.png" />关于我们
+        <image class="function-icon" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/info.png" />关于我们
       </button>
       <button class="function-item" data-type="logout" bindtap="onFunctionTap"> 
-        <image class="function-icon" src="/images/exit-full.png" />注销账号
+        <image class="function-icon" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/exit-full.png" />注销账号
       </button>
     </view>
 </view>

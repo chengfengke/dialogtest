@@ -6,7 +6,7 @@
   </view>
   
   <view class="button-container">
-    <button class="login-button" bind:tap="onLogin"><image src="/images/Wechat.jpg" style="width:30px;height:30px;margin-right: 30%;"/>微信登录</button>
+    <button class="login-button" bind:tap="onLogin"><image src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/Wechat.jpg" style="width:30px;height:30px;margin-right: 30%;"/>微信登录</button>
   </view>
   <view class="button-container2">
     <button class="phone-login"><van-icon class="phone-icon" size="25px" name="phone" />

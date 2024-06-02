@@ -1,6 +1,6 @@
 Page({
   data: {
-    avatarPath: '/images/avatar-XiaoXi.png', // Path to the avatar image
+    avatarPath: 'cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/avatar-XiaoXi.png', // Path to the avatar image
     checked: false,
     openid: "",
     inviteCode: "",
