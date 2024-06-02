@@ -151,6 +151,10 @@ Page({
     db.collection('users').add({
       data: {
         openid: this.data.openid,
+        gender: "男",
+        area:"北京市西城区西城区",
+        info:"你还没有设置简介呢～",
+        birthday:"1976-01-01",
         nickName: userInfo.nickName
       },
       success: function(res) {

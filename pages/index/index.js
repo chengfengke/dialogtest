@@ -20,6 +20,8 @@ Page({
     interval: 2000,
     duration: 500
   },
+  onShow() {
+  },
   changeIndicatorDots() {
     this.setData({
       indicatorDots: !this.data.indicatorDots

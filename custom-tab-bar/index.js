@@ -3,30 +3,25 @@ Page({
   data: {
     chatActive:"chat",
     profileActive:"manager-o",
-    activeTab: 'chat'
-  },
-  onLoad() {
-  },
-  onShow() {
+    activeTab: "chat"
   },
   onChange(event) {
     const name = event.detail;
-    this.setData({ activeTab: name });
-    console.log(this.data.activeTab);
-    wx.nextTick(() => {
+    let newChatActive = name === 'chat' ? 'chat' : 'chat-o';
+    let newProfileActive = name === 'chat' ? 'manager-o' : 'manager';
+    
+    // 一次性更新所有相关数据
+    this.setData({
+      activeTab: event.detail,
+      chatActive: newChatActive,
+      profileActive: newProfileActive
+    }, () => {
+      // 在setData更新完成后执行页面跳转
       if (name === 'chat') {
-        this.setData({
-          chatActive: "chat",
-          profileActive: "manager-o"
-        });
         wx.switchTab({
           url: '/pages/index/index',
         });
       } else {
-        this.setData({
-          chatActive: "chat-o",
-          profileActive: "manager"
-        });
         wx.switchTab({
           url: '/pages/profile/profile',
         });

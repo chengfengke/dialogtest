@@ -1,7 +1,8 @@
 {
   "usingComponents": {},
   "tabBar": {
-    "custom":true,
+    "selected": 0,
+    "custom":false,
     "list": [{
       "pagePath": "pages/index/index",
       "text":"聊天"
