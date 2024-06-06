@@ -47,7 +47,7 @@ Page({
     const self = this;
     console.log(self.data.messages);
     wx.request({
-      url: 'http://localhost:6006/dialogue',
+      url: 'http://2.tcp.vip.cpolar.cn:14630/dialogue',
       method: 'POST',
       data: {
         message: inputText, // 直接使用 inputText

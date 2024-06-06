@@ -183,6 +183,10 @@
   /* Apply your button styling here */
 }
 
+.placeholder {
+  height: 50px; /* 设置占位符的高度，这里以50像素为例，您可以根据需要调整 */
+}
+
 /* 新建对话按钮样式 */
 .new-conversation {
   position: absolute;

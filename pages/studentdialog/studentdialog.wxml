@@ -20,6 +20,7 @@
         <image wx:if="{{item.type === 'user'}}" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/student.png" class="user-gif"/>
       </view>
     </block>
+    <view class="placeholder"></view> 
   </scroll-view>
   <van-button class="new-conversation" icon="edit" bindtap="createNewConversation">新建会话</van-button>
   
