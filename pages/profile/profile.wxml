@@ -25,7 +25,7 @@
       <button class="function-item" data-type="info" bindtap="onFunctionTap">
         <image class="function-icon" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/info.png" />关于我们
       </button>
-      <button class="function-item" data-type="logout" bindtap="onFunctionTap"> 
+      <button class="function-item" data-type="logout" bindtap="onLogout"> 
         <image class="function-icon" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/exit-full.png" />注销账号
       </button>
     </view>

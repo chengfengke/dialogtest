@@ -108,5 +108,10 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  onLogout() {
+    wx.navigateTo({
+      url: '/pages/login/login',
+    })
   }
 })
