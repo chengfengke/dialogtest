@@ -18,6 +18,10 @@ Page({
     scrollTop: "",
   },
   
+  replaceEscapeChars: function(text) {
+    return text.replace(/\\n/g, '\n').replace(/\\\\n/g, '\\n');
+  },
+
   onInput(event) {
     this.setData({
       inputText: event.detail.value, // 使用 event.detail.value 获取输入值
@@ -47,7 +51,7 @@ Page({
     const self = this;
     console.log(self.data.messages);
     wx.request({
-      url: 'http://127.0.0.1:7861/chat/knowledge_base_chat',
+      url: 'http://5.tcp.vip.cpolar.cn:13267/chat/knowledge_base_chat',
       method: 'POST',
       data: {
         query: inputText,
@@ -98,19 +102,21 @@ typeMessage(message, index) {
   if (index < message.length) {
     const nextIndex = index + 1;
     const nextMessage = message.substring(0, nextIndex);
+
+    // 使用 replaceEscapeChars 函数处理转义字符
+    const processedMessage = this.replaceEscapeChars(nextMessage);
+
     const updatedMessages = self.data.messages;
-    // 如果当前正在逐字显示的是最后一条消息，则更新内容
     if (updatedMessages.length > 0 && updatedMessages[updatedMessages.length - 1].role === 'assistant') {
-      updatedMessages[updatedMessages.length - 1].content = nextMessage;
+      updatedMessages[updatedMessages.length - 1].content = processedMessage;
     } else {
-      // 否则，将新消息推入消息数组
-      updatedMessages.push({ role: 'assistant', content: nextMessage });
+      updatedMessages.push({ role: 'assistant', content: processedMessage });
     }
     self.setData({ messages: updatedMessages });
-    // 设置下一次更新的定时器
+
     setTimeout(() => {
       self.typeMessage(message, nextIndex);
-    }, 100); // 逐字更新的速度，可以根据需要调整
+    }, 100);
   }
 },
 
