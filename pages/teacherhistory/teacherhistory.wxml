@@ -1,0 +1,23 @@
+<view class="container">
+  <!-- Top Bar with back button and title -->
+  <view class="top-bar">
+    <image class="return-icon" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/arrow-left-bold.png" bindtap="goBack"></image>
+    <view class="app-info">
+      <view class="app-name">历史记录</view>
+    </view>
+  </view>
+
+  <!-- Record list -->
+  <scroll-view class="history-scroll" scroll-y="true" style="height: 100%;">
+    <block wx:for="{{history}}" wx:key="index">
+      <view class="record" bind:tap="navigateToChat" data-messages="{{item.messages}}" data-id="{{item._id}}">
+        <view class="title">{{item.messages[1].content}}</view>
+        <view class="timestamp">{{item.timestamp}}</view>
+        <!-- Vant Weapp delete icon -->
+        <van-icon name="delete" class="delete-icon" catchtap="deleteRecord" data-id="{{item._id}}" />
+      </view>
+    </block>
+    <!-- Footer message indicating end of the list -->
+    <view class="footer">这是所有的记录了哟</view>
+  </scroll-view>
+</view>

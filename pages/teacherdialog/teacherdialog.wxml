@@ -1,32 +1,35 @@
 <view class="container">
-  <view class="top-bar">
-    <image class="return-icon" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/arrow-left-bold.png" bindtap="goBack" ></image>
-    <image class="app-avatar" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/avatar-XiaoXi.png"></image>
-    <view class="app-info">
-      <view class= "app-name">{{ appName }}</view>
-      <view class = " app-description"> {{appDescription}}</view>
-    </view>
+
+<view class="top-bar">
+  <image class="return-icon" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/arrow-left-bold.png" bindtap="goBack" ></image>
+  <image class="app-avatar" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/avatar-XiaoXi.png"></image>
+  <view class="app-info">
+    <view class= "app-name">{{ appName }}</view>
+    <view class = " app-description"> {{appDescription}}</view>
   </view>
+</view>
 
-
-  <scroll-view class="messages" scroll-y="true" scroll-top="{{scrollTop}}">
+<van-button class="history-button" icon="clock-o" bindtap="showHistory">历史</van-button>
+<scroll-view class="messages" scroll-y="true" scroll-top="{{scrollTop}}">
   <block wx:for="{{messages}}" wx:key="index">
-    <view class="message-container {{item.type}}">
-      <image class="avatar user-avatar" wx:if="{{item.type === 'user'}}" src="{{userAvatar}}" />
-      <view class="message {{item.type}}" style="width:{{item.width}}px;">
+    <view class="message-container {{item.role}}">
+      <image wx:if="{{item.role === 'assistant'}}" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/holdkimi.png" class="bot-gif"/>
+      <view class="message {{item.role}}">
         {{item.content}}
-      </view> 
-      <image class="avatar bot-avatar" wx:if="{{item.type === 'assistant'}}" src="{{systemAvatar}}" />
+      </view>
+      <image wx:if="{{item.role === 'user'}}" src="cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/student.png" class="user-gif"/>
     </view>
   </block>
+  <view class="placeholder"></view> 
 </scroll-view>
+<van-button class="new-conversation" icon="edit" bindtap="createNewConversation">新建会话</van-button>
 
-  <view class="input-container">
-    <view class="input-inner-container">
-      <image class="new-topic" src= "cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/clear_blue.png"></image>
-      <van-field value="{{inputText}}" placeholder="请向我提问" bind:input="onInput" input-align="left" />
-    </view>
-    <van-button round type="info" size="small" bind:tap="sendMessage" disabled="{{!isInputActive}}">发送</van-button>
-</view>
+
+
+<view class="input-container">
+  <image class="new-topic" src= "cloud://dialogtest-5g1chgyo87fcdefd.6469-dialogtest-5g1chgyo87fcdefd-1325881522/image/clear_blue.png" bind:tap="clearConversation"></image>
+  <textarea class="input-textarea" placeholder="向我说点悄悄话吧"  value="{{inputText}}" auto-height="{{true}}" bindinput="onInput"></textarea>
+  <van-button class="sendButton" round type="info" size="small" bindtap="sendMessage" disabled="{{!isInputActive}}">发送</van-button>
 </view>
 
+</view>

@@ -3,8 +3,10 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding: 20px;
+  padding-top : 20px;
+  padding-left: 0px;
 }
+
 
 /* 顶部栏样式 */
 .top-bar {
@@ -24,103 +26,12 @@
   margin-right: 10px;
 }
 
-.messages {
-  flex: 1; /* 消息视图填充可用空间 */
-  overflow-y: auto; /* 允许在Y轴上滚动 */
-  padding: 10px 5px; /* 调整内边距，确保消息显示不会太紧凑 */
-}
-/* 消息容器样式 */
-.message-container {
-  display: flex;
-  align-items: flex-start;
-  border-radius: 10px;
-  margin: 10px;
-}
-
-/* 用户和机器人头像样式 */
-.bot-avatar,
-.user-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 20%;
-}
-
-/* 用户消息容器样式 */
-.message-container.user {
-  display: inline-flex;
-  justify-content: flex-start;
-  margin-right: 60px;
-}
-
-/* 机器人消息容器样式 */
-.message-container.assistant {
-  justify-content: flex-end;
-  margin-left: 60px;
-  background-color: #f0f0f0;
-}
-
-/* 消息样式 */
-.message {
-  max-width: 78%;
-  padding: 10px;
-  border-radius: 10px;
-  position: relative;
-  word-wrap: break-word;
-  word-break: break-all;
-}
-
-/* 用户消息样式 */
-.user {
-  align-self: flex-start;
-  background-color: #5583E3;
-  color: #ffffff;
-  text-align: right;
-  font-size: 14px;
-}
-
-/* 机器人消息样式 */
-.assistant {
-  align-self: flex-end;
-  background-color: #FFECEC;
-  color: #000000;
-  text-align: left;
-  font-size: 14px;
-}
-
-/* 输入容器样式 */
-.input-container {
-  display: flex;
-  align-items: center;
-  padding: 5px;
-  border: thin solid #BBBBBB;
-  border-radius: 15px;
-  margin-top: auto; /* 自动定位到底部 */
-}
-
-/* 输入框样式 */
-.input {
-  flex-grow: 1; /* 输入框填充剩余空间 */
-  margin-right: 5px;
-  padding: 5px;
-  border: none;
-  background-color: #ffffff;
-  font-size: 14px;
-  border-radius: 15px;
-}
-
-
-/* 发送按钮激活状态样式 */
-.send-btn.active {
-  background-color: blue;
-}
-
 /* 应用头像样式 */
 .app-avatar {
   width: 60rpx;
   height: 60rpx;
   margin-right: 10px;
 }
-
 /* 应用信息样式 */
 .app-info {
   display: flex;
@@ -144,47 +55,143 @@
   color: #999;
 }
 
-/* 消息视图样式 */
-.messages {
-  flex: 1; /* 使消息视图填充可用空间 */
-  height: calc(100vh - 150px); /* 视口高度减去顶部栏和输入框的高度 */
-  overflow-y: auto; /* 允许在Y轴上滚动 */
+/* 导航图标样式 */
+.icon-image {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px; /* 与标题的间隔 */
+}
+
+/* 顶部标题样式 */
+.header-title {
+  position: absolute; /* 绝对定位 */
+  left: 50%; /* 水平居中 */
+  top: 60%; /* 垂直居中 */
+  transform: translate(-50%, -10px); /* 左右居中并向下移动 */
+  color: #ffffff; /* 字体颜色 */
+  font-size: 18px; /* 字体大小 */
+  font-weight: bold; /* 字体粗细 */
+  text-align: center; /* 文字居中对齐 */
+}
+
+
+
+/* 消息容器样式 */
+.message-container {
+  display: flex;
+  align-items: flex-start;
+  margin: 4px 0;
+  padding-left: 5px; /* 减少左侧内边距 */
+}
+
+/* 消息样式 */
+.message {
+  display: inline-block; /* 使 div 表现得像 inline 元素一样 */
+  max-width:26vh;
   padding: 10px;
-  padding-top: 5px;
+  margin: 0 10px;
+  word-break: break-word; /* 防止内容溢出 */
+}
+
+/* 用户消息样式 */
+.message.user {
+  background-color: #30b2fd; /* 用户消息背景颜色 */
+  margin-left: auto;
+  border-radius: 15px 0px 15px 15px;
+  color: white; /* 用户消息字体颜色 */
+  text-align: left; /* 文本右对齐 */
+  align-self: flex-end; 
+}
+
+
+/* 系统消息样式 */
+.message.bot {
+  background-color: #f0f0f0;
+  color: black;
+  border-radius: 0px 15px 15px 15px;
+  align-self: flex-start; /* 系统消息靠左 */
 }
 
 .input-container {
   display: flex;
-  justify-content: space-between; /* 确保组件之间有空隙 */
-  align-items: center; /* 垂直居中 */
-  padding-left: 15px;
-  padding-right: 15px;
-  width: 45vh;
-  background-color: #FFF; /* 或者根据您的UI主题颜色 */
-  border-top: none; /* 取消顶部边界线 */
-  border-radius: 30px; /* 调整这个值来改变圆角的弯曲程度 */
-  border-color: #FFF;
-}
-.input-inner-container {
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-around;
-  margin-left: 0;
+  padding-right: 15px;
+  width: 100%; /* 宽度调整为100%，以填满底部空间 */
+  background-color: #FFF;
+  position: fixed; /* 确保输入框固定在底部 */
+  bottom: 10px; /* 从底部向上调整 */
+  border-top: 1px solid #ccc; /* 添加顶部边框 */
+  border-radius: 30px;
+  margin-bottom: 6px; /* 新增底部边距，将边框往上挪 */
+  box-shadow: 0px -2px 4px rgba(0,0,0,0.05); /* 更新阴影效果 */
+  padding-top: 6px;
+}
+
+.input-textarea {
+  flex: 1;  /* 确保文本框占满剩余空间 */
+  margin-left: 6px;
+  margin-right: 6px;  /* 与发送按钮的间距 */
+  border: 1px solid #ccc; /* 添加灰色的边框 */
+  padding: 5px 12px;
+  border-radius: 20px; /* 边框半径，调整此值可以控制椭圆形状的弯曲程度 */
+  outline: none; /* 去除点击时的默认边框线 */
+}
+
+.sendButton {
+  padding-right: 3px;
 }
 .new-topic{
   height: 50rpx;
   width: 50rpx;
+  margin-bottom: 5rpx;
   margin-left: 25rpx;
   margin-right: 5rpx;
 }
 .van-field {
   margin-left: 1px;
   flex-grow: 1; /* 输入框填充剩余空间 */
-  margin-right: 1px; /* 保持按钮和输入框的间距 */
 
 }
 
 .van-button {
-  min-width: 20px; /* 保证按钮宽度足够 */
-  margin-right: 20rpx;
+  min-width: 10px; /* 保证按钮宽度足够 */
 }
+
+.messages {
+  flex: 1; /* 消息视图填充可用空间 */
+  overflow-y: auto; /* 允许在Y轴上滚动 */
+  padding: 10px 5px 36px 5px; /* 调整内边距，确保消息显示不会太紧凑 */
+}
+
+.bot-gif {
+  width: 50px; /* 设置图像的固定宽度 */
+  height: 50px; /* 设置图像的固定高度 */
+}
+
+.user-gif {
+  width: 50px; /* 设置图像的固定宽度 */
+  height: 50px; /* 设置图像的固定高度 */
+  border-radius: 20px;
+}
+
+.history-button {
+  position: absolute;
+  top: 180px; /* Adjust the position as needed */
+  left: 0;
+  z-index: 1; /* Ensure it appears above the scroll-view */
+  /* Apply your button styling here */
+}
+
+.placeholder {
+  height: 50px; /* 设置占位符的高度，这里以50像素为例，您可以根据需要调整 */
+}
+
+/* 新建对话按钮样式 */
+.new-conversation {
+  position: absolute;
+  bottom: 80px; /* Adjust if you have an input container at the bottom */
+  right: 0;
+  z-index: 1; /* Ensure it appears above the scroll-view */
+}
+

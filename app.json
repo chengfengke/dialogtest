@@ -9,7 +9,8 @@
     "pages/profile/profile",
     "custom-tab-bar/index",
     "pages/history/history",
-    "pages/identity/identity"
+    "pages/identity/identity",
+    "pages/teacherhistory/teacherhistory"
   ],
   "window": {
     "navigationBarTextStyle": "black",

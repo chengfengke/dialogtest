@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-top:40px;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f8f8;
+}
+
+.return-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.app-info {
+  flex: 1;
+}
+
+.app-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.history-scroll {
+  flex: 1;
+}
+
+.record {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.title {
+  font-size: 16px;
+  color: #333;
+}
+
+.timestamp {
+  font-size: 14px;
+  color: #666;
+}
+
+.footer {
+  padding: 10px;
+  text-align: center;
+  color: #888;
+}
+
+
+.record {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.title {
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+}
+
+.timestamp {
+  color: #666;
+  font-size: 14px;
+}
+
+.delete-icon {
+  margin-left: 10px;
+  font-size: 18px; /* 调整图标大小 */
+}
+
+.record {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
